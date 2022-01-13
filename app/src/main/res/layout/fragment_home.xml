@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,47 +11,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabTextColor="@color/black"
-            app:tabSelectedTextColor="@color/orange"
-            app:tabTextAppearance="@style/TabLayoutTextAppearance">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Все" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ПК" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playstation" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xbox" />
-        </com.google.android.material.tabs.TabLayout>
-
         <TextView
             android:id="@+id/textViewPopular"
+            style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Популярное"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:text="@string/popular" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPopular"
@@ -68,12 +33,11 @@
 
         <TextView
             android:id="@+id/textViewGenres"
+            style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Жанры"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:text="@string/genres" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewGenres"
@@ -89,12 +53,11 @@
 
         <TextView
             android:id="@+id/textViewNew"
+            style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Новинки"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:text="@string/new_games" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewNew"
