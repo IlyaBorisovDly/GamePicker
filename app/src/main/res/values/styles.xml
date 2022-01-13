@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ShapeAppearanceOverlay.App.MediumComponent" parent="">
+    <style name="CircleImageView" parent="">
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>
     </style>
 
 </resources>

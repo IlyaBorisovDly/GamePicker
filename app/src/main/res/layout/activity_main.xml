@@ -23,7 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.MediumComponent"
+            app:shapeAppearance="@style/CircleImageView"
             app:srcCompat="@drawable/ic_monkey">
 
         </com.google.android.material.imageview.ShapeableImageView>
