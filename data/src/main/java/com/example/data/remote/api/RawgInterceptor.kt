@@ -6,10 +6,15 @@ import okhttp3.Response
 internal class RawgInterceptor(private val apiKey: String): Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        val request = chain.request().newBuilder()
-            .addHeader("api-key", apiKey)
+        val request = chain.request()
+        val modifiedUrl = request.url().newBuilder()
+            .addQueryParameter("key", apiKey)
             .build()
 
-        return chain.proceed(request)
+        return chain.proceed(
+            request.newBuilder()
+                .url(modifiedUrl)
+                .build()
+        )
     }
 }

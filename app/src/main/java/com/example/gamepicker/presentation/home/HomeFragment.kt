@@ -6,27 +6,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.gamepicker.R
+import com.example.gamepicker.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
-
     private lateinit var viewModel: HomeViewModel
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        viewModel = ViewModelProvider(
+            owner = this,
+            factory = HomeViewModelFactory()
+        )[HomeViewModel::class.java]
 
+        viewModel.gamesLiveData.observe(viewLifecycleOwner, { game ->
+            binding.textViewPopular.text = game.name
+        })
+
+        viewModel.publisherLiveData.observe(viewLifecycleOwner, { publisher ->
+            binding.textViewGenres.text = publisher.name
+        })
+
+        return binding.root
+    }
 }

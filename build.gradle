@@ -1,6 +1,7 @@
 
 ext {
     retrofit_version = '2.9.0'
+    jetpack_core_version = '1.7.0'
 }
 
 buildscript {
