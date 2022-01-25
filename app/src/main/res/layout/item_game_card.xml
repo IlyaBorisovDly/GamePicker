@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageViewGamePoster"
+            android:id="@+id/imageViewGameCardPoster"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:scaleType="centerCrop"
@@ -23,28 +23,28 @@
             tools:src="@drawable/screenshot" />
 
         <ImageView
-            android:id="@+id/imageViewPlatform"
+            android:id="@+id/imageViewGameCardPlatform"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGamePoster"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewGameCardPoster"
             app:srcCompat="@drawable/ic_platform_playstation" />
 
         <TextView
-            android:id="@+id/textViewGameRating"
+            android:id="@+id/textViewGameCardRating"
             style="@style/Widget.GamePicker.GameRatingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewPlatform"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewGameCardPlatform"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageViewPlatform"
+            app:layout_constraintTop_toTopOf="@+id/imageViewGameCardPlatform"
             tools:text="86" />
 
         <TextView
-            android:id="@+id/textViewGameCardDescription"
+            android:id="@+id/textViewGameCardName"
             style="@style/Widget.GamePicker.GameCardDescriptionTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewPlatform"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewGameCardPlatform"
             tools:text="Deathloop"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

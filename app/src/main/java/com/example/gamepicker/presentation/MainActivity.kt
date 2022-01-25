@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ActivityMainBinding
-import com.example.gamepicker.presentation.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     
