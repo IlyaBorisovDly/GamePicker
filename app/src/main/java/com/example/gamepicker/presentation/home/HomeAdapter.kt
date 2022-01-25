@@ -1,6 +1,7 @@
 package com.example.gamepicker.presentation.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -25,7 +26,6 @@ class HomeAdapter(
         val item = games[position]
 
         holder.bind(item)
-
     }
 
     override fun getItemCount() = games.size
@@ -39,7 +39,12 @@ class HomeAdapter(
 
             with(binding) {
                 textViewGameCardName.text = game.name
-                textViewGameCardRating.text = game.metacritic.toString()
+
+                if (game.metacritic == 0) {
+                    textViewGameCardRating.visibility = View.GONE
+                } else {
+                    textViewGameCardRating.text = game.metacritic.toString()
+                }
             }
         }
 

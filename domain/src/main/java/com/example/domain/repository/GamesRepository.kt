@@ -1,8 +1,8 @@
-package com.example.data.remote.source
+package com.example.domain.repository
 
 import com.example.domain.entity.game.Game
 
-interface RemoteDataSource {
+interface GamesRepository {
 
     suspend fun getPopularGames(): List<Game>
 

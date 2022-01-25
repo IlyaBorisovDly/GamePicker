@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.databinding.FragmentHomeBinding
 
@@ -26,21 +27,41 @@ class HomeFragment : Fragment() {
             factory = HomeViewModelFactory()
         )[HomeViewModel::class.java]
 
-        viewModel.gamesLiveData.observe(viewLifecycleOwner, { game ->
-            val games = listOf(game)
-            setupRecycler(games)
-        })
-
-        viewModel.publisherLiveData.observe(viewLifecycleOwner, { publisher ->
-            binding.textViewGenres.text = publisher.name
-        })
+        initializeObservers()
 
         return binding.root
     }
 
-    private fun setupRecycler(games: List<Game>) {
-        binding.recyclerViewPopular.apply {
-            layoutManager = LinearLayoutManager(context)
+    private fun initializeObservers() {
+        viewModel.popularGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewPopular.setup(it)
+        })
+
+        viewModel.openWorldGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewNew.setup(it)
+        })
+
+        viewModel.multiplayerGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewMultiplayer.setup(it)
+        })
+
+        viewModel.metacriticChoiceGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewMetacriticChoice.setup(it)
+        })
+        
+        viewModel.fromSoftwareGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewFromSoftwareGames.setup(it)
+        })
+
+        viewModel.playstationGames.observe(viewLifecycleOwner, {
+            binding.recyclerViewPlaystationCollection.setup(it)
+        })
+    }
+
+    private fun RecyclerView.setup(games: List<Game>) {
+        apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = HomeAdapter(games)
         }
     }
