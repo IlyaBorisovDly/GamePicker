@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.entity.game.Game
 import com.example.gamepicker.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -25,7 +27,8 @@ class HomeFragment : Fragment() {
         )[HomeViewModel::class.java]
 
         viewModel.gamesLiveData.observe(viewLifecycleOwner, { game ->
-            binding.textViewPopular.text = game.name
+            val games = listOf(game)
+            setupRecycler(games)
         })
 
         viewModel.publisherLiveData.observe(viewLifecycleOwner, { publisher ->
@@ -33,5 +36,12 @@ class HomeFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+    private fun setupRecycler(games: List<Game>) {
+        binding.recyclerViewPopular.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = HomeAdapter(games)
+        }
     }
 }
