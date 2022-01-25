@@ -2,6 +2,7 @@ package com.example.gamepicker.presentation.home
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.databinding.FragmentHomeBinding
+import com.example.gamepicker.presentation.home.decoration.DividerItemDecoration
+import com.example.gamepicker.presentation.home.adapter.GameCardsAdapter
+import kotlin.math.roundToInt
 
 class HomeFragment : Fragment() {
 
@@ -62,7 +66,18 @@ class HomeFragment : Fragment() {
         apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = HomeAdapter(games)
+            adapter = GameCardsAdapter(games)
+            addItemDecoration(
+                DividerItemDecoration(
+                    innerDivider = convertDpIntoPx(8),
+                    outerDivider = convertDpIntoPx(16)
+                )
+            )
         }
+    }
+
+    private fun convertDpIntoPx(dp: Int): Int {
+        val displayMetrics = requireContext().resources.displayMetrics
+        return (dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
     }
 }

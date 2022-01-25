@@ -14,18 +14,19 @@
         <TextView
             android:id="@+id/textViewPopular"
             style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="@string/popular" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPopular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 
@@ -36,16 +37,17 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Открытый мир" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewNew"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 
@@ -56,16 +58,17 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="@string/genres" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewGenres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_genre_card">
 
@@ -76,16 +79,17 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Мультиплеер" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMultiplayer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 
@@ -96,16 +100,17 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Выбор Metacritic" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMetacriticChoice"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 
@@ -116,16 +121,17 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Игры от FromSoftware" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewFromSoftwareGames"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 
@@ -136,16 +142,18 @@
             style="@style/Widget.GamePicker.HeaderTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Коллекция Playstation" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPlaystationCollection"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_game_card">
 

@@ -9,7 +9,7 @@ private const val PAGE_SIZE = 10
 
 class RemoteDataSourceImpl: RemoteDataSource {
 
-    override suspend fun getPopularGames(): List<Game> = getGames()
+    override suspend fun getPopularGames(): List<Game> = getGames(page = 5)
 
     override suspend fun getOpenWorldGames(): List<Game> = getGames(page = 2, tags = "open-world")
 
@@ -18,7 +18,7 @@ class RemoteDataSourceImpl: RemoteDataSource {
     }
 
     override suspend fun getMetacriticChoiceGames(): List<Game> {
-        return getGames(page = 2, ordering = "-metacritic")
+        return getGames(page = 4, ordering = "-metacritic")
     }
 
     override suspend fun getFromSoftwareGames(): List<Game> = getGames(developers = "fromsoftware")

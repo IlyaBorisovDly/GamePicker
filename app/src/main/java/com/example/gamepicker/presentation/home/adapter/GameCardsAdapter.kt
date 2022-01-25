@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home
+package com.example.gamepicker.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,9 @@ import com.bumptech.glide.Glide
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.databinding.ItemGameCardBinding
 
-class HomeAdapter(
+class GameCardsAdapter(
     private val games: List<Game>
-): RecyclerView.Adapter<HomeAdapter.GameViewHolder>() {
+): RecyclerView.Adapter<GameCardsAdapter.GameViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
         val itemBinding = ItemGameCardBinding.inflate(
