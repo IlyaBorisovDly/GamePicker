@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Открытый мир"
+            android:text="@string/open_world"
             android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Мультиплеер"
+            android:text="@string/multiplayer"
             android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Выбор Metacritic"
+            android:text="@string/metacritic_choice"
             android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Игры от FromSoftware"
+            android:text="@string/fromsoftware_games"
             android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -178,7 +178,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Коллекция Playstation"
+            android:text="@string/playstation_collection"
             android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView

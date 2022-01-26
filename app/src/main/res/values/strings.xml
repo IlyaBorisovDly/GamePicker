@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Game Picker</string>
 
+    <string name="fromsoftware_games">Игры от FromSoftware</string>
+    <string name="metacritic_choice">Выбор Metacritic</string>
+    <string name="multiplayer">Мультиплеер</string>
+    <string name="open_world">Открытый мир</string>
+    <string name="playstation_collection">Коллекция Playstation</string>
     <string name="popular">Популярное</string>
-    <string name="genres">Жанры</string>
-    <string name="new_games">Новинки</string>
+
 
 </resources>
