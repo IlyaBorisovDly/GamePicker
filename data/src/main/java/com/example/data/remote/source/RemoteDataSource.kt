@@ -4,6 +4,8 @@ import com.example.domain.entity.game.Game
 
 interface RemoteDataSource {
 
+    suspend fun getHeaderGame(): Game
+
     suspend fun getPopularGames(): List<Game>
 
     suspend fun getOpenWorldGames(): List<Game>

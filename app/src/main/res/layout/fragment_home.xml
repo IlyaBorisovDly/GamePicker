@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +11,59 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageViewHeaderGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/game_picture"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/screenshot" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textViewHeaderGameName"
+                style="@style/Widget.GamePicker.GameHeaderTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Deathloop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/item_shimmer_header_game" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <TextView
             android:id="@+id/textViewPopular"
@@ -39,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -71,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -103,7 +157,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -135,7 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -167,7 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
@@ -200,7 +254,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_shimmer" />
+            <include layout="@layout/shimmer_games_list" />
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 

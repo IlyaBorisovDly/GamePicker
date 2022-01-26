@@ -16,6 +16,10 @@ class HomeViewModelFactory: ViewModelProvider.Factory {
         GamesRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 
+    private val getHeaderGameUseCase by lazy {
+        GetHeaderGameUseCase(gamesRepository = gamesRepository)
+    }
+
     private val getPopularGamesUseCase by lazy {
         GetPopularGamesUseCase(gamesRepository = gamesRepository)
     }
@@ -43,6 +47,7 @@ class HomeViewModelFactory: ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return HomeViewModel(
+            getHeaderGameUseCase = getHeaderGameUseCase,
             getPopularGamesUseCase = getPopularGamesUseCase,
             getOpenWorldGamesUseCase = getOpenWorldGamesUseCase,
             getMultiplayerGamesUseCase = getMultiplayerGamesUseCase,

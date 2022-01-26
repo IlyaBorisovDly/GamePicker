@@ -9,6 +9,8 @@ private const val PAGE_SIZE = 10
 
 class RemoteDataSourceImpl: RemoteDataSource {
 
+    override suspend fun getHeaderGame(): Game = getGames(search = "God of War: Ragnarok")[0]
+
     override suspend fun getPopularGames(): List<Game> = getGames(page = 5)
 
     override suspend fun getOpenWorldGames(): List<Game> = getGames(page = 2, tags = "open-world")
@@ -31,7 +33,8 @@ class RemoteDataSourceImpl: RemoteDataSource {
         ordering: String? = null,
         developers: String? = null,
         stores: String? = null,
-        tags: String? = null
+        tags: String? = null,
+        search: String? = null
     ): List<Game> {
         val service = RetrofitInstance.api
         val response = service.games(
@@ -40,7 +43,8 @@ class RemoteDataSourceImpl: RemoteDataSource {
             ordering = ordering,
             developers = developers,
             stores = stores,
-            tags = tags
+            tags = tags,
+            search = search
         )
 
         if (response.isSuccessful && response.body() != null) {

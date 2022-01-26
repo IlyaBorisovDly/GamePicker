@@ -9,6 +9,7 @@ import com.example.domain.usecase.*
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
+    private val getHeaderGameUseCase: GetHeaderGameUseCase,
     private val getPopularGamesUseCase: GetPopularGamesUseCase,
     private val getOpenWorldGamesUseCase: GetOpenWorldGamesUseCase,
     private val getMultiplayerGamesUseCase: GetMultiplayerGamesUseCase,
@@ -16,6 +17,9 @@ class HomeViewModel(
     private val getFromSoftwareGamesUseCase: GetFromSoftwareGamesUseCase,
     private val getPlaystationGamesUseCase: GetPlaystationGamesUseCase
 ) : ViewModel() {
+
+    private val _headerGame = MutableLiveData<Game>()
+    val headerGame: LiveData<Game> = _headerGame
 
     private val _popularGames = MutableLiveData<List<Game>>()
     val popularGames: LiveData<List<Game>> = _popularGames
@@ -37,6 +41,7 @@ class HomeViewModel(
 
     init {
         viewModelScope.launch {
+            val headerGame = getHeaderGameUseCase()
             val popularGamesList = getPopularGamesUseCase()
             val openWorldGamesList = getOpenWorldGamesUseCase()
             val multiplayerGamesList = getMultiplayerGamesUseCase()
@@ -44,6 +49,7 @@ class HomeViewModel(
             val fromSoftwareGamesList = getFromSoftwareGamesUseCase()
             val playstationGamesList = getPlaystationGamesUseCase()
 
+            _headerGame.value = headerGame
             _popularGames.value = popularGamesList
             _openWorldGames.value = openWorldGamesList
             _multiplayerGames.value = multiplayerGamesList

@@ -6,6 +6,8 @@ import com.example.domain.repository.GamesRepository
 
 class GamesRepositoryImpl(private val remoteDataSource: RemoteDataSource): GamesRepository {
 
+    override suspend fun getHeaderGame(): Game = remoteDataSource.getHeaderGame()
+
     override suspend fun getPopularGames(): List<Game> = remoteDataSource.getPopularGames()
 
     override suspend fun getOpenWorldGames(): List<Game> = remoteDataSource.getOpenWorldGames()

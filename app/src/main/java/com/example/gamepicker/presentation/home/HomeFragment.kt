@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.DimensionConverter
 import com.example.gamepicker.databinding.FragmentHomeBinding
@@ -59,6 +61,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeObservers() {
+        viewModel.headerGame.observe(viewLifecycleOwner, { game ->
+            Glide.with(requireContext())
+                .load(game.background_image)
+                .into(binding.imageViewHeaderGame)
+            binding.shimmerHeader.disableShimmer()
+            binding.constraintLayoutHeader.visibility = ConstraintLayout.VISIBLE
+            binding.textViewHeaderGameName.text = game.name
+        })
+
         viewModel.popularGames.observe(viewLifecycleOwner, {
             binding.recyclerViewPopular.setup(it)
             binding.shimmerPopular.disableShimmer()
@@ -104,6 +115,7 @@ class HomeFragment : Fragment() {
 
     private fun startAllShimmers() {
         with(binding) {
+            shimmerHeader.startShimmer()
             shimmerPopular.startShimmer()
             shimmerOpenWorld.startShimmer()
             shimmerMultiplayer.startShimmer()

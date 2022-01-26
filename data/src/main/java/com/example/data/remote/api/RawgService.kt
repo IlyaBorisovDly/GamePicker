@@ -14,6 +14,7 @@ interface RawgService {
         @Query("ordering") ordering: String? = null,
         @Query("developers") developers: String? = null,
         @Query("stores") stores: String? = null,
-        @Query("tags") tags: String? = null
+        @Query("tags") tags: String? = null,
+        @Query("search") search: String? = null
     ): Response<RawgData<List<GameResponse>>>
 }
