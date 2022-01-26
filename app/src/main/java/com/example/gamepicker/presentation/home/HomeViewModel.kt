@@ -37,42 +37,19 @@ class HomeViewModel(
 
     init {
         viewModelScope.launch {
-            loadPopularGames()
-            loadOpenWorldGames()
-            loadMultiplayerGames()
-            loadMetacriticChoiceGames()
-            loadFromSoftwareGames()
-            loadPlaystationGames()
+            val popularGamesList = getPopularGamesUseCase()
+            val openWorldGamesList = getOpenWorldGamesUseCase()
+            val multiplayerGamesList = getMultiplayerGamesUseCase()
+            val metacriticGamesList = getMetacriticChoiceGamesUseCase()
+            val fromSoftwareGamesList = getFromSoftwareGamesUseCase()
+            val playstationGamesList = getPlaystationGamesUseCase()
+
+            _popularGames.value = popularGamesList
+            _openWorldGames.value = openWorldGamesList
+            _multiplayerGames.value = multiplayerGamesList
+            _metacriticChoiceGames.value = metacriticGamesList
+            _fromSoftwareGames.value = fromSoftwareGamesList
+            _playstationGames.value = playstationGamesList
         }
-    }
-
-    private suspend fun loadPlaystationGames() {
-        val games = getPlaystationGamesUseCase()
-        _playstationGames.value = games
-    }
-
-    private suspend fun loadFromSoftwareGames() {
-        val games = getFromSoftwareGamesUseCase()
-        _fromSoftwareGames.value = games
-    }
-
-    private suspend fun loadMetacriticChoiceGames() {
-        val games = getMetacriticChoiceGamesUseCase()
-        _metacriticChoiceGames.value = games
-    }
-
-    private suspend fun loadMultiplayerGames() {
-        val games = getMultiplayerGamesUseCase()
-        _multiplayerGames.value = games
-    }
-
-    private suspend fun loadOpenWorldGames() {
-        val games = getOpenWorldGamesUseCase()
-        _openWorldGames.value = games
-    }
-
-    private suspend fun loadPopularGames() {
-        val games = getPopularGamesUseCase()
-        _popularGames.value = games
     }
 }
