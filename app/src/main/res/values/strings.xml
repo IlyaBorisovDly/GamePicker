@@ -8,5 +8,7 @@
     <string name="playstation_collection">Коллекция Playstation</string>
     <string name="popular">Популярное</string>
 
+    <!-- Content descriptions -->
+    <string name="game_picture">Изображение игры</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.data.remote.api
+package com.example.data.entity
 
 data class RawgData<T>(
     val count: Int,

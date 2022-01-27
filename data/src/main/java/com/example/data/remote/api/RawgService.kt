@@ -1,5 +1,6 @@
 package com.example.data.remote.api
 
+import com.example.data.entity.RawgData
 import com.example.data.entity.game.GameResponse
 import retrofit2.Response
 import retrofit2.http.GET
