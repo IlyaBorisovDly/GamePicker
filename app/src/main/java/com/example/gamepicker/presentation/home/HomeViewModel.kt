@@ -4,8 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.LoadResult
+import com.example.domain.entity.Status
+import com.example.domain.entity.item.GameListItem
+import com.example.domain.entity.item.Item
 import com.example.domain.entity.game.Game
+import com.example.domain.entity.item.GameItem
+import com.example.domain.mapper.toGameItem
+import com.example.domain.mapper.toGameListItem
 import com.example.domain.usecase.*
 import kotlinx.coroutines.launch
 
@@ -19,44 +24,53 @@ class HomeViewModel(
     private val getPlaystationGamesUseCase: GetPlaystationGamesUseCase
 ) : ViewModel() {
 
-    private val _headerGame = MutableLiveData<LoadResult<Game>>()
-    val headerGame: LiveData<LoadResult<Game>> = _headerGame
-
-    private val _popularGames = MutableLiveData<LoadResult<List<Game>>>()
-    val popularGames: LiveData<LoadResult<List<Game>>> = _popularGames
-
-    private val _openWorldGames = MutableLiveData<LoadResult<List<Game>>>()
-    val openWorldGames: LiveData<LoadResult<List<Game>>> = _openWorldGames
-
-    private val _multiplayerGames = MutableLiveData<LoadResult<List<Game>>>()
-    val multiplayerGames: LiveData<LoadResult<List<Game>>> = _multiplayerGames
-
-    private val _metacriticChoiceGames = MutableLiveData<LoadResult<List<Game>>>()
-    val metacriticChoiceGames: LiveData<LoadResult<List<Game>>> = _metacriticChoiceGames
-
-    private val _fromSoftwareGames = MutableLiveData<LoadResult<List<Game>>>()
-    val fromSoftwareGames: LiveData<LoadResult<List<Game>>> = _fromSoftwareGames
-
-    private val _playstationGames = MutableLiveData<LoadResult<List<Game>>>()
-    val playstationGames: LiveData<LoadResult<List<Game>>> = _playstationGames
+    private val _items = MutableLiveData<Status<List<Item>>>()
+    val items: LiveData<Status<List<Item>>> = _items
 
     init {
         viewModelScope.launch {
-            val headerGame = getHeaderGameUseCase()
-            val popularGamesList = getPopularGamesUseCase()
-            val openWorldGamesList = getOpenWorldGamesUseCase()
-            val multiplayerGamesList = getMultiplayerGamesUseCase()
-            val metacriticGamesList = getMetacriticChoiceGamesUseCase()
-            val fromSoftwareGamesList = getFromSoftwareGamesUseCase()
-            val playstationGamesList = getPlaystationGamesUseCase()
+            _items.value = loadItems()
+        }
+    }
 
-            _headerGame.value = headerGame
-            _popularGames.value = popularGamesList
-            _openWorldGames.value = openWorldGamesList
-            _multiplayerGames.value = multiplayerGamesList
-            _metacriticChoiceGames.value = metacriticGamesList
-            _fromSoftwareGames.value = fromSoftwareGamesList
-            _playstationGames.value = playstationGamesList
+    private suspend fun loadItems(): Status<List<Item>> {
+        try {
+            val headerGame = getGameItemOrFail(getHeaderGameUseCase())
+            val popularGames = getGameListItemOrFail(getPopularGamesUseCase(), "Популярное")
+            val openWorldGames = getGameListItemOrFail(getOpenWorldGamesUseCase(), "Открытый мир")
+            val multiplayerGames = getGameListItemOrFail(getMultiplayerGamesUseCase(), "Мультиплеер")
+            val metacriticChoiceGames = getGameListItemOrFail(getMetacriticChoiceGamesUseCase(), "Выбор Metacritic")
+            val fromSoftwareGames = getGameListItemOrFail(getFromSoftwareGamesUseCase(), "Игры от FromSoftware")
+            val playstationGames = getGameListItemOrFail(getPlaystationGamesUseCase(), "Коллекция Playstation")
+
+            return Status.Success(
+                listOf(
+                    headerGame,
+                    popularGames,
+                    openWorldGames,
+                    multiplayerGames,
+                    metacriticChoiceGames,
+                    fromSoftwareGames,
+                    playstationGames
+                )
+            )
+        } catch (e: Exception) {
+            return Status.Failure(e.message)
+        }
+    }
+
+
+    private fun getGameItemOrFail(result: Status<Game>): GameItem {
+        when (result) {
+            is Status.Success -> return result.data.toGameItem()
+            is Status.Failure -> throw Exception(result.message)
+        }
+    }
+
+    private fun getGameListItemOrFail(result: Status<List<Game>>, title: String): GameListItem {
+        when (result) {
+            is Status.Success -> return result.data.toGameListItem(title)
+            is Status.Failure -> throw Exception(result.message)
         }
     }
 }

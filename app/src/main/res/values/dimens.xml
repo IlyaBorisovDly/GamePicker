@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fragment_home_inner_margin">16dp</dimen>
+    <dimen name="fragment_home_outer_margin">16dp</dimen>
+
+    <dimen name="container_game_list_inner_margin">8dp</dimen>
+    <dimen name="container_game_list_outer_margin">16dp</dimen>
+
+    <dimen name="container_game_card_height">220dp</dimen>
+    <dimen name="container_game_card_horizontal_margin">16dp</dimen>
+
+    <dimen name="container_game_list_header_margin_start">16dp</dimen>
+    <dimen name="container_game_list_header_margin_bottom">8dp</dimen>
+</resources>

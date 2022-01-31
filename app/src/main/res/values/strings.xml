@@ -11,4 +11,6 @@
     <!-- Content descriptions -->
     <string name="game_picture">Изображение игры</string>
 
+    <string name="game_picture_shimmer">Загрузка изображения</string>
+
 </resources>

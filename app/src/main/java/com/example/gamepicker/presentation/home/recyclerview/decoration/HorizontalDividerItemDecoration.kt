@@ -1,10 +1,10 @@
-package com.example.gamepicker.presentation.home.decoration
+package com.example.gamepicker.presentation.home.recyclerview.decoration
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class DividerItemDecoration(
+class HorizontalDividerItemDecoration(
     private val innerDivider: Int,
     private val outerDivider: Int
     ): RecyclerView.ItemDecoration() {

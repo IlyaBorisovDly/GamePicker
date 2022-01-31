@@ -1,262 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".presentation.home.HomeFragment">
 
-    <LinearLayout
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/fragment_home_outer_margin">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayoutHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/imageViewHeaderGame"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/game_picture"
-                    android:scaleType="centerCrop"
-                    tools:src="@drawable/screenshot" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textViewHeaderGameName"
-                style="@style/Widget.GamePicker.GameHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/black"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Deathloop" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/item_shimmer_header_game" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-        <TextView
-            android:id="@+id/textViewPopular"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/popular"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewPopular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerPopular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/shimmer_games_list" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-        <TextView
-            android:id="@+id/textViewOpenWorld"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/open_world"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewOpenWorld"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
+            android:orientation="vertical">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <include layout="@layout/container_game_card_shimmer" />
 
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerOpenWorld"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <include layout="@layout/container_game_list_shimmer" />
 
-            <include layout="@layout/shimmer_games_list" />
+            <include layout="@layout/container_game_list_shimmer" />
 
-        </com.facebook.shimmer.ShimmerFrameLayout>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textViewMultiplayer"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/multiplayer"
-            android:visibility="gone" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewMultiplayer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerMultiplayer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/shimmer_games_list" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-        <TextView
-            android:id="@+id/textViewMetacriticChoice"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/metacritic_choice"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewMetacriticChoice"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerMetacriticChoice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/shimmer_games_list" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-        <TextView
-            android:id="@+id/textViewFromSoftwareGames"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/fromsoftware_games"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewFromSoftwareGames"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerFromSoftwareGames"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/shimmer_games_list" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-        <TextView
-            android:id="@+id/textViewPlaystationCollection"
-            style="@style/Widget.GamePicker.HeaderTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/playstation_collection"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewPlaystationCollection"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:visibility="gone"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_game_card">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmerPlaystationCollection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/shimmer_games_list" />
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
-
-    </LinearLayout>
-</ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

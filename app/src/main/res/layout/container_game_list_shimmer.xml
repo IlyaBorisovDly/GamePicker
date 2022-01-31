@@ -5,27 +5,25 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/Widget.GamePicker.HeaderTextView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/container_game_list_header_margin_start"
+        android:layout_marginBottom="@dimen/container_game_list_header_margin_bottom"
         android:background="@color/gray" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
+        android:paddingStart="@dimen/container_game_list_outer_margin"
         android:paddingEnd="0dp"
-        android:paddingBottom="16dp">
+        android:layout_marginBottom="@dimen/fragment_home_inner_margin">
 
-        <include layout="@layout/item_shimmer_card" />
+        <include layout="@layout/item_game_card_shimmer" />
 
-        <include layout="@layout/item_shimmer_card" />
+        <include layout="@layout/item_game_card_shimmer" />
 
-        <include layout="@layout/item_shimmer_card" />
+        <include layout="@layout/item_game_card_shimmer" />
 
     </LinearLayout>
 </LinearLayout>
