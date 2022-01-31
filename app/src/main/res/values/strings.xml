@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Game Picker</string>
 
+    <!-- Game containers' titles -->
     <string name="fromsoftware_games">Игры от FromSoftware</string>
     <string name="metacritic_choice">Выбор Metacritic</string>
     <string name="multiplayer">Мультиплеер</string>
@@ -8,9 +9,12 @@
     <string name="playstation_collection">Коллекция Playstation</string>
     <string name="popular">Популярное</string>
 
+    <!-- Error messages -->
+    <string name="error_message">Упс! Что-то пошло не так…</string>
+
     <!-- Content descriptions -->
     <string name="game_picture">Изображение игры</string>
-
     <string name="game_picture_shimmer">Загрузка изображения</string>
+    <string name="error_icon">Изображение "ошибка"</string>
 
 </resources>

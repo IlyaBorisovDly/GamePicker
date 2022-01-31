@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.Status
+import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentHomeBinding
 import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
@@ -44,21 +46,25 @@ class HomeFragment : Fragment() {
     }
 
     private fun initObservers() {
-
         viewModel.items.observe(viewLifecycleOwner) { result ->
+            binding.shimmerHome.disableShimmer()
             when (result) {
-                is Status.Success -> {
-                    binding.shimmerHome.disableShimmer()
-                    binding.recyclerViewHome.apply {
-                        adapter = HomeAdapter(result.data)
-                        setVerticalDividersInPx(innerDivider, outerDivider)
-                        makeVertical()
-                    }
-                }
-                is Status.Failure -> {
-                    binding.shimmerHome.disableShimmer()
-                }
+                is Status.Success -> showItemsRecycler(result.data)
+                is Status.Failure -> showErrorLayout()
             }
+        }
+    }
+
+    private fun showErrorLayout() {
+        binding.recyclerViewHome.visibility = RecyclerView.GONE
+        binding.layoutError.root.visibility = View.VISIBLE
+    }
+
+    private fun showItemsRecycler(items: List<Item>) {
+        binding.recyclerViewHome.apply {
+            adapter = HomeAdapter(items)
+            setVerticalDividersInPx(innerDivider, outerDivider)
+            makeVertical()
         }
     }
 }

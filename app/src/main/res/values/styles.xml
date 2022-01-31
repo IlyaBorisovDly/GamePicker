@@ -13,6 +13,12 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Widget.GamePicker.ErrorTextView" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Widget.GamePicker.UserNameTextView" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">20sp</item>
