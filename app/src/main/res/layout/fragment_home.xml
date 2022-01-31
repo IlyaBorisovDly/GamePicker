@@ -11,7 +11,8 @@
         android:id="@+id/shimmer_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/fragment_home_outer_margin">
+        android:paddingTop="@dimen/fragment_home_outer_margin"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,5 +33,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/container_game_list"/>
 </LinearLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:layout_marginBottom="16dp">
 
     <TextView
         android:id="@+id/textViewHeader"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/container_game_list_header_margin_start"
         android:layout_marginBottom="@dimen/container_game_list_header_margin_bottom"
-        tools:text="Список игр" />
+        tools:text="@sample/game_list_container_titles" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewGameCards"

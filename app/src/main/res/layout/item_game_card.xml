@@ -6,7 +6,8 @@
     android:layout_height="180dp"
     app:cardBackgroundColor="@color/black"
     app:cardCornerRadius="10dp"
-    app:cardElevation="0dp">
+    app:cardElevation="0dp"
+    tools:layout_marginEnd="@dimen/container_game_list_inner_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/screenshot" />
+            tools:src="@sample/screenshots" />
 
         <ImageView
             android:id="@+id/imageViewGameCardPlatform"
@@ -61,7 +62,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewGameCardPlatform"
-            tools:text="Deathloop" />
+            tools:text="@sample/game_names"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
