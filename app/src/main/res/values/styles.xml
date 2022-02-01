@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Styles -->
+
+    <!-- Home fragment -->
     <style name="Widget.GamePicker.GameHeaderTextView" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">24sp</item>
@@ -52,6 +54,33 @@
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Game Details Fragment -->
+    <style name="Widget.GamePicker.GameDetailsMetacriticTextView" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetailsTitleTextView" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/game_details_title_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/game_details_title_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/game_details_title_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/game_details_title_horizontal_padding</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetailsDescriptionTextView" parent="">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/game_details_title_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/game_details_title_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/game_details_title_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/game_details_title_horizontal_padding</item>
     </style>
 
     <!-- Appearances -->

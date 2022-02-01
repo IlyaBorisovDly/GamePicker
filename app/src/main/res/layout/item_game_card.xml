@@ -6,7 +6,7 @@
     android:layout_height="180dp"
     app:cardBackgroundColor="@color/black"
     app:cardCornerRadius="10dp"
-    app:cardElevation="0dp"
+    app:cardElevation="5dp"
     tools:layout_marginEnd="@dimen/container_game_list_inner_margin">
 
     <LinearLayout

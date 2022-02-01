@@ -16,5 +16,5 @@ fun GameResponse.toDomain(): Game {
     val image = background_image ?: "https://media.rawg.io/media/screenshots/3be/3be596df93186292773c894b124089bb.jpg"
     val release = released ?: "N/A"
 
-    return Game(name, release, image, domainPlatforms, metacritic)
+    return Game(id, name, release, image, domainPlatforms, metacritic)
 }

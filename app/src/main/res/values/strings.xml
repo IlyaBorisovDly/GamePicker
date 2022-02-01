@@ -18,6 +18,14 @@
     <string name="categories_developers">Разработчики</string>
     <string name="categories_platforms">Платформы</string>
 
+    <!-- Game Details -->
+    <string name="game_details_about">Об игре</string>
+    <string name="game_details_developers">Разработчики</string>
+    <string name="game_details_genres">Жанры</string>
+    <string name="game_details_platforms">Платформы</string>
+    <string name="game_details_related">Похожие</string>
+    <string name="game_details_released">Выпущена</string>
+
     <!-- Bottom navigation menu -->
     <string name="bottom_navigation_menu_home">Главная</string>
     <string name="bottom_navigation_menu_categories">Категории</string>

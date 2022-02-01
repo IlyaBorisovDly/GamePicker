@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.gamedetails.GameDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:contentDescription="@string/game_picture"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@sample/screenshots" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPlatforms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewPlatformPC"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/game_platform_icon_PC"
+                    android:src="@drawable/ic_platform_pc"
+                    android:visibility="gone"
+                    tools:visibility="@sample/games.json/games/pc_visibility" />
+
+                <ImageView
+                    android:id="@+id/imageViewPlatformPlaystation"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/game_platform_icon_Playstation"
+                    android:src="@drawable/ic_platform_playstation"
+                    android:visibility="gone"
+                    tools:visibility="@sample/games.json/games/playstation_visibility" />
+
+                <ImageView
+                    android:id="@+id/imageViewPlatformXbox"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/game_platform_icon_Xbox"
+                    android:src="@drawable/ic_platform_xbox"
+                    android:visibility="gone"
+                    tools:visibility="@sample/games.json/games/xbox_visibility" />
+
+                <ImageView
+                    android:id="@+id/imageViewPlatformMacOs"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/game_platform_icon_Mac_Os"
+                    android:src="@drawable/ic_platform_mac_os"
+                    android:visibility="gone"
+                    tools:visibility="@sample/games.json/games/mac_os_visibility" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewDetailsAbout"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_about" />
+
+            <TextView
+                android:id="@+id/textViewDetailsAboutContent"
+                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="5"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsGenres"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_genres" />
+
+            <TextView
+                android:id="@+id/textViewDetailsGenresContent"
+                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="5"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsPlatforms"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_platforms" />
+
+            <TextView
+                android:id="@+id/textViewDetailsPlatformsContent"
+                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="5"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsDevelopers"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_developers" />
+
+            <TextView
+                android:id="@+id/textViewDetailsDevelopersContent"
+                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsReleased"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_released" />
+
+            <TextView
+                android:id="@+id/textViewDetailsReleasedContent"
+                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsRelated"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_related" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDetailsRelated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_game_card"
+                tools:orientation="horizontal"
+                tools:paddingEnd="0dp"
+                tools:paddingStart="16dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewDetailsRating"
+            style="@style/Widget.GamePicker.GameDetailsMetacriticTextView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:maxLength="3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:background="@drawable/shape_round_rectangle_green_filled"
+            tools:ignore="TextContrastCheck"
+            tools:text="@sample/games.json/games/metacritic" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
