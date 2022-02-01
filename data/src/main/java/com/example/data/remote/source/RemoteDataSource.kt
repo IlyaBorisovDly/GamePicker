@@ -1,6 +1,6 @@
 package com.example.data.remote.source
 
-import com.example.domain.entity.Status
+import com.example.domain.Status
 import com.example.domain.entity.game.Game
 
 interface RemoteDataSource {

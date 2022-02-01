@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.data.remote.source.RemoteDataSourceImpl
 import com.example.data.repository.GamesRepositoryImpl
 import com.example.domain.usecase.*
+import com.example.gamepicker.presentation.SharedViewModel
 
 class HomeViewModelFactory: ViewModelProvider.Factory {
 
@@ -16,44 +17,14 @@ class HomeViewModelFactory: ViewModelProvider.Factory {
         GamesRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 
-    private val getHeaderGameUseCase by lazy {
-        GetHeaderGameUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getPopularGamesUseCase by lazy {
-        GetPopularGamesUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getOpenWorldGamesUseCase by lazy {
-        GetOpenWorldGamesUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getMultiplayerGamesUseCase by lazy {
-        GetMultiplayerGamesUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getMetacriticChoiceGamesUseCase by lazy {
-        GetMetacriticChoiceGamesUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getFromSoftwareGamesUseCase by lazy {
-        GetFromSoftwareGamesUseCase(gamesRepository = gamesRepository)
-    }
-
-    private val getPlaystationGamesUseCase by lazy {
-        GetPlaystationGamesUseCase(gamesRepository = gamesRepository)
+    private val getItemsUseCase by lazy {
+        GetItemsUseCase(gamesRepository = gamesRepository)
     }
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return HomeViewModel(
-            getHeaderGameUseCase = getHeaderGameUseCase,
-            getPopularGamesUseCase = getPopularGamesUseCase,
-            getOpenWorldGamesUseCase = getOpenWorldGamesUseCase,
-            getMultiplayerGamesUseCase = getMultiplayerGamesUseCase,
-            getMetacriticChoiceGamesUseCase = getMetacriticChoiceGamesUseCase,
-            getFromSoftwareGamesUseCase = getFromSoftwareGamesUseCase,
-            getPlaystationGamesUseCase = getPlaystationGamesUseCase
+        return SharedViewModel(
+            getItemsUseCase = getItemsUseCase
         ) as T
     }
 }

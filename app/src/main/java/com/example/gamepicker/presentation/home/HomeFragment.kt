@@ -1,16 +1,17 @@
 package com.example.gamepicker.presentation.home
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
-import com.example.domain.entity.Status
+import com.example.domain.Status
 import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentHomeBinding
+import com.example.gamepicker.presentation.SharedViewModel
 import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
 import com.example.gamepicker.utils.disableShimmer
 import com.example.gamepicker.utils.makeVertical
@@ -18,7 +19,8 @@ import com.example.gamepicker.utils.setVerticalDividersInPx
 
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: SharedViewModel by activityViewModels { HomeViewModelFactory() }
+
     private lateinit var binding: FragmentHomeBinding
 
     private val innerDivider by lazy {
@@ -35,15 +37,16 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(
-            owner = this,
-            factory = HomeViewModelFactory()
-        )[HomeViewModel::class.java]
-
         initObservers()
 
         return binding.root
     }
+
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//
+//
+//    }
 
     private fun initObservers() {
         viewModel.items.observe(viewLifecycleOwner) { result ->
@@ -56,15 +59,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun showErrorLayout() {
-        binding.recyclerViewHome.visibility = RecyclerView.GONE
         binding.layoutError.root.visibility = View.VISIBLE
     }
 
     private fun showItemsRecycler(items: List<Item>) {
         binding.recyclerViewHome.apply {
-            adapter = HomeAdapter(items)
-            setVerticalDividersInPx(innerDivider, outerDivider)
             makeVertical()
+            setVerticalDividersInPx(innerDivider, outerDivider)
+            adapter = HomeAdapter(items)
+            visibility = RecyclerView.VISIBLE
         }
     }
 }

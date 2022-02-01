@@ -1,6 +1,6 @@
 package com.example.domain.repository
 
-import com.example.domain.entity.Status
+import com.example.domain.Status
 import com.example.domain.entity.game.Game
 
 interface GamesRepository {

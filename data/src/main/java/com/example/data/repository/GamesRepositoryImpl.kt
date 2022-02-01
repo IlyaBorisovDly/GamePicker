@@ -1,7 +1,7 @@
 package com.example.data.repository
 
 import com.example.data.remote.source.RemoteDataSource
-import com.example.domain.entity.Status
+import com.example.domain.Status
 import com.example.domain.entity.game.Game
 import com.example.domain.repository.GamesRepository
 

@@ -2,7 +2,7 @@ package com.example.data.remote.source
 
 import com.example.data.remote.api.RetrofitInstance
 import com.example.data.mapper.toDomain
-import com.example.domain.entity.Status
+import com.example.domain.Status
 import com.example.domain.entity.game.Game
 import retrofit2.HttpException
 import java.io.IOException
