@@ -1,8 +1,10 @@
 package com.example.gamepicker.presentation.home.recyclerview.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +33,7 @@ class GameCardsAdapter(
 
     inner class GameCardHolder(
         private val binding: ItemGameCardBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private lateinit var game: Game
 
@@ -39,6 +41,8 @@ class GameCardsAdapter(
             this.game = game
 
             binding.textViewGameCardName.text = game.name
+
+            setGameCardPlatforms()
             setGameCardRating()
             loadPoster()
         }
@@ -50,6 +54,32 @@ class GameCardsAdapter(
                 .into(binding.imageViewGameCardPoster)
         }
 
+        private fun setGameCardPlatforms() {
+            disablePlatformsVisibility()
+            game.platforms.apply {
+                find { it.name.contains("PC") }
+                    ?.let { binding.imageViewPlatformPC.visibility = ImageView.VISIBLE }
+
+                find { it.name.contains("PlayStation") }
+                    ?.let { binding.imageViewPlatformPlaystation.visibility = ImageView.VISIBLE }
+
+                find { it.name.contains("Xbox One") }
+                    ?.let { binding.imageViewPlatformXbox.visibility = ImageView.VISIBLE }
+
+                find { it.name.contains("macOS") }
+                    ?.let { binding.imageViewPlatformMacOs.visibility = ImageView.VISIBLE }
+            }
+        }
+
+        private fun disablePlatformsVisibility() {
+            with(binding) {
+                imageViewPlatformPC.visibility = ImageView.GONE
+                imageViewPlatformPlaystation.visibility = ImageView.GONE
+                imageViewPlatformXbox.visibility = ImageView.GONE
+                imageViewPlatformMacOs.visibility = ImageView.GONE
+            }
+        }
+
         private fun setGameCardRating() {
             val rating = game.metacritic
 
@@ -58,15 +88,29 @@ class GameCardsAdapter(
                 return
             }
 
+            binding.textViewGameCardRating.visibility = View.VISIBLE
             binding.textViewGameCardRating.apply {
                 text = rating.toString()
 
                 when (rating) {
-                    in 1..49 -> setColorById(R.color.red)
-                    in 50..74 -> setColorById(R.color.yellow)
-                    else -> setColorById(R.color.green)
+                    in 1..49 -> {
+                        setColorById(R.color.red)
+                        setBackgroundById(R.drawable.shape_round_rectangle_red)
+                    }
+                    in 50..74 -> {
+                        setColorById(R.color.yellow)
+                        setBackgroundById(R.drawable.shape_round_rectangle_yellow)
+                    }
+                    else -> {
+                        setColorById(R.color.green)
+                        setBackgroundById(R.drawable.shape_round_rectangle_green)
+                    }
                 }
             }
+        }
+
+        private fun TextView.setBackgroundById(id: Int) {
+            background = ContextCompat.getDrawable(itemView.context, id)
         }
 
         private fun TextView.setColorById(id: Int) {

@@ -9,9 +9,10 @@
     app:cardElevation="0dp"
     tools:layout_marginEnd="@dimen/container_game_list_inner_margin">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageViewGameCardPoster"
@@ -19,50 +20,85 @@
             android:layout_height="100dp"
             android:contentDescription="@string/game_picture"
             android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@sample/screenshots" />
+            tools:src="@sample/screenshots[2]"/>
 
-        <ImageView
-            android:id="@+id/imageViewGameCardPlatform"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGameCardPoster"
-            app:srcCompat="@drawable/ic_platform_playstation" />
-
-        <TextView
-            android:id="@+id/textViewGameCardRating"
-            style="@style/Widget.GamePicker.GameRatingTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayoutPlatforms"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewGameCardPlatform"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageViewGameCardPlatform"
-            tools:text="86" />
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageView
+                android:id="@+id/imageViewPlatformPC"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_platform_pc"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageViewPlatformPlaystation"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_platform_playstation"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageViewPlatformXbox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_platform_xbox"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageViewPlatformMacOs"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_platform_mac_os"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewGameCardRating"
+                style="@style/Widget.GamePicker.GameCardRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_round_rectangle_green"
+                android:gravity="center"
+                android:maxLength="3"
+                tools:text="98"
+                tools:textColor="@color/green" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textViewGameCardName"
             style="@style/Widget.GamePicker.GameCardDescriptionTextView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:maxLines="2"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewGameCardPlatform"
-            tools:text="@sample/game_names"/>
+            tools:text="@sample/game_names[2]" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

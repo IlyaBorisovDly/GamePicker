@@ -13,6 +13,17 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Widget.GamePicker.GameCardRatingTextView" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameCardDescriptionTextView" parent="">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="Widget.GamePicker.ErrorTextView" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">24sp</item>
@@ -23,18 +34,6 @@
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="Widget.GamePicker.GameCardDescriptionTextView" parent="">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="Widget.GamePicker.GameRatingTextView" parent="">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/green</item>
     </style>
 
     <style name="Widget.GamePicker.GenreTextView" parent="">
