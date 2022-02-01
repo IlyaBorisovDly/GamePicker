@@ -29,7 +29,7 @@ class RemoteDataSourceImpl: RemoteDataSource {
     }
 
     override suspend fun getMetacriticChoiceGames(): Status<List<Game>> {
-        return getGames(page = 4, ordering = "-metacritic")
+        return getGames(page = 19, ordering = "-metacritic")
     }
 
     override suspend fun getFromSoftwareGames(): Status<List<Game>> {

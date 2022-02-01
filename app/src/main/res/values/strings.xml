@@ -13,8 +13,13 @@
     <string name="error_message">Упс! Что-то пошло не так…</string>
 
     <!-- Content descriptions -->
+    <string name="error_icon">Изображение ошибки</string>
     <string name="game_picture">Изображение игры</string>
     <string name="game_picture_shimmer">Загрузка изображения</string>
-    <string name="error_icon">Изображение "ошибка"</string>
+    <string name="game_platform_icon_PC">Изображение платформы (ПК)</string>
+    <string name="game_platform_icon_Playstation">Изображение платформы (Playstation)</string>
+    <string name="game_platform_icon_Xbox">Изображение платформы (Xbox)</string>
+    <string name="game_platform_icon_Mac_Os">Изображение платформы (MacOS)</string>
+    <string name="genre_icon">Изображение с жанром</string>
 
 </resources>

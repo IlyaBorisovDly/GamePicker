@@ -20,7 +20,7 @@
             android:layout_height="100dp"
             android:contentDescription="@string/game_picture"
             android:scaleType="centerCrop"
-            tools:src="@sample/screenshots[2]"/>
+            tools:src="@sample/screenshots"/>
 
         <LinearLayout
             android:id="@+id/linearLayoutPlatforms"
@@ -40,6 +40,7 @@
                 android:layout_marginEnd="4dp"
                 android:src="@drawable/ic_platform_pc"
                 android:visibility="gone"
+                android:contentDescription="@string/game_platform_icon_PC"
                 tools:visibility="visible" />
 
             <ImageView
@@ -48,6 +49,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="4dp"
+                android:contentDescription="@string/game_platform_icon_Playstation"
                 android:src="@drawable/ic_platform_playstation"
                 android:visibility="gone"
                 tools:visibility="visible" />
@@ -58,6 +60,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="4dp"
+                android:contentDescription="@string/game_platform_icon_Xbox"
                 android:src="@drawable/ic_platform_xbox"
                 android:visibility="gone"
                 tools:visibility="visible" />
@@ -68,6 +71,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="4dp"
+                android:contentDescription="@string/game_platform_icon_Mac_Os"
                 android:src="@drawable/ic_platform_mac_os"
                 android:visibility="gone"
                 tools:visibility="visible" />
@@ -81,12 +85,12 @@
                 android:id="@+id/textViewGameCardRating"
                 style="@style/Widget.GamePicker.GameCardRatingTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shape_round_rectangle_green"
                 android:gravity="center"
                 android:maxLength="3"
+                android:layout_height="wrap_content"
                 tools:text="98"
-                tools:textColor="@color/green" />
+                tools:textColor="@color/green"
+                tools:background="@drawable/shape_round_rectangle_green" />
 
         </LinearLayout>
 
@@ -95,10 +99,11 @@
             style="@style/Widget.GamePicker.GameCardDescriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:ellipsize="end"
             android:maxLines="2"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            tools:text="@sample/game_names[2]" />
+            tools:text="@sample/game_names" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
