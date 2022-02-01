@@ -21,7 +21,8 @@ class HomeFragment : Fragment() {
 
     private val viewModel: SharedViewModel by activityViewModels { HomeViewModelFactory() }
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     private val innerDivider by lazy {
         requireContext().resources.getDimension(R.dimen.fragment_home_inner_margin).toInt()
@@ -35,18 +36,17 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         initObservers()
 
         return binding.root
     }
 
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        super.onSaveInstanceState(outState)
-//
-//
-//    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     private fun initObservers() {
         viewModel.items.observe(viewLifecycleOwner) { result ->
