@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:title="Home"
+        android:title="@string/bottom_navigation_menu_home"
         android:icon="@drawable/ic_bottom_navigation_home" />
 
     <item
         android:id="@+id/categoriesFragment"
-        android:title="Categories"
+        android:title="@string/bottom_navigation_menu_categories"
         android:icon="@drawable/ic_bottom_navigation_categories" />
 
     <item
         android:id="@+id/statisticsFragment"
-        android:title="Statistics"
+        android:title="@string/bottom_navigation_menu_statistics"
         android:icon="@drawable/ic_bottom_navigation_statistics" />
 
     <item
         android:id="@+id/searchFragment"
-        android:title="Search"
+        android:title="@string/bottom_navigation_menu_search"
         android:icon="@drawable/ic_bottom_navigation_search" />
 
 </menu>

@@ -1,0 +1,103 @@
+{
+  "games": [
+    {
+      "name": "Hades",
+      "background": "@sample/screenshots[5]",
+      "metacritic": 89,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "visible"
+    },
+    {
+      "name": "Deathloop",
+      "background": "@sample/screenshots[1]",
+      "metacritic": 73,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "gone"
+    },
+    {
+      "name": "Hollow Knight",
+      "background": "@sample/screenshots[6]",
+      "metacritic": 95,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "gone",
+      "mac_os_visibility": "visible"
+    },
+    {
+      "name": "Fallout: New Vegas",
+      "background": "@sample/screenshots[3]",
+      "metacritic": 72,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "gone",
+      "xbox_visibility": "gone",
+      "mac_os_visibility": "gone"
+    },
+    {
+      "name": "Disco Elysium",
+      "background": "@sample/screenshots[2]",
+      "metacritic": 49,
+      "metacritic_color": "@color/red",
+      "metacritic_background": "@drawable/shape_round_rectangle_red",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "visible"
+    },
+    {
+      "name": "The Witcher 3",
+      "background": "@sample/screenshots[8]",
+      "metacritic": 98,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "gone"
+    },
+    {
+      "name": "Red Dead Redemption 2",
+      "background": "@sample/screenshots[7]",
+      "metacritic": 64,
+      "metacritic_color": "@color/yellow",
+      "metacritic_background": "@drawable/shape_round_rectangle_yellow",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "gone",
+      "mac_os_visibility": "gone"
+    },
+    {
+      "name": "Grand Theft Auto V",
+      "background": "@sample/screenshots[4]",
+      "metacritic": 90,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "gone"
+    },
+    {
+      "name": "Batman: Arkham City",
+      "background": "@sample/screenshots[0]",
+      "metacritic": 88,
+      "metacritic_color": "@color/green",
+      "metacritic_background": "@drawable/shape_round_rectangle_green",
+      "pc_visibility": "visible",
+      "playstation_visibility": "visible",
+      "xbox_visibility": "visible",
+      "mac_os_visibility": "gone"
+    }
+  ]
+}

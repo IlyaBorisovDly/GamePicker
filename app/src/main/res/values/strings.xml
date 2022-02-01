@@ -2,12 +2,27 @@
     <string name="app_name">Game Picker</string>
 
     <!-- Game containers' titles -->
-    <string name="fromsoftware_games">Игры от FromSoftware</string>
-    <string name="metacritic_choice">Выбор Metacritic</string>
-    <string name="multiplayer">Мультиплеер</string>
-    <string name="open_world">Открытый мир</string>
-    <string name="playstation_collection">Коллекция Playstation</string>
     <string name="popular">Популярное</string>
+    <string name="open_world">Открытый мир</string>
+    <string name="multiplayer">Мультиплеер</string>
+    <string name="metacritic_choice">Выбор Metacritic</string>
+    <string name="fromsoftware_games">Игры от FromSoftware</string>
+    <string name="playstation_collection">Коллекция Playstation</string>
+
+    <!-- Categories -->
+    <string name="categories">Категории</string>
+    <string name="categories_best">Лучшее</string>
+    <string name="categories_popular">Популярное</string>
+    <string name="categories_new">Новое</string>
+    <string name="categories_genres">Жанры</string>
+    <string name="categories_developers">Разработчики</string>
+    <string name="categories_platforms">Платформы</string>
+
+    <!-- Bottom navigation menu -->
+    <string name="bottom_navigation_menu_home">Главная</string>
+    <string name="bottom_navigation_menu_categories">Категории</string>
+    <string name="bottom_navigation_menu_statistics">Статистика</string>
+    <string name="bottom_navigation_menu_search">Поиск</string>
 
     <!-- Error messages -->
     <string name="error_message">Упс! Что-то пошло не так…</string>

@@ -20,7 +20,7 @@
             android:layout_height="100dp"
             android:contentDescription="@string/game_picture"
             android:scaleType="centerCrop"
-            tools:src="@sample/screenshots"/>
+            tools:src="@sample/games.json/games/background"/>
 
         <LinearLayout
             android:id="@+id/linearLayoutPlatforms"
@@ -41,7 +41,7 @@
                 android:src="@drawable/ic_platform_pc"
                 android:visibility="gone"
                 android:contentDescription="@string/game_platform_icon_PC"
-                tools:visibility="visible" />
+                tools:visibility="@sample/games.json/games/pc_visibility" />
 
             <ImageView
                 android:id="@+id/imageViewPlatformPlaystation"
@@ -52,7 +52,7 @@
                 android:contentDescription="@string/game_platform_icon_Playstation"
                 android:src="@drawable/ic_platform_playstation"
                 android:visibility="gone"
-                tools:visibility="visible" />
+                tools:visibility="@sample/games.json/games/playstation_visibility" />
 
             <ImageView
                 android:id="@+id/imageViewPlatformXbox"
@@ -63,7 +63,7 @@
                 android:contentDescription="@string/game_platform_icon_Xbox"
                 android:src="@drawable/ic_platform_xbox"
                 android:visibility="gone"
-                tools:visibility="visible" />
+                tools:visibility="@sample/games.json/games/xbox_visibility" />
 
             <ImageView
                 android:id="@+id/imageViewPlatformMacOs"
@@ -74,7 +74,7 @@
                 android:contentDescription="@string/game_platform_icon_Mac_Os"
                 android:src="@drawable/ic_platform_mac_os"
                 android:visibility="gone"
-                tools:visibility="visible" />
+                tools:visibility="@sample/games.json/games/mac_os_visibility" />
 
             <Space
                 android:layout_width="0dp"
@@ -88,9 +88,9 @@
                 android:gravity="center"
                 android:maxLength="3"
                 android:layout_height="wrap_content"
-                tools:text="98"
-                tools:textColor="@color/green"
-                tools:background="@drawable/shape_round_rectangle_green" />
+                tools:text="@sample/games.json/games/metacritic"
+                tools:background="@sample/games.json/games/metacritic_background"
+                tools:textColor="@sample/games.json/games/metacritic_color" />
 
         </LinearLayout>
 
@@ -103,7 +103,7 @@
             android:maxLines="2"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            tools:text="@sample/game_names" />
+            tools:text="@sample/games.json/games/name" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

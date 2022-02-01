@@ -10,6 +10,12 @@
         <entry key="app/src/main/res/drawable/ic_bottom_navigation_home.xml" value="0.2917948717948718" />
         <entry key="app/src/main/res/drawable/ic_bottom_navigation_search.xml" value="0.2917948717948718" />
         <entry key="app/src/main/res/drawable/ic_bottom_navigation_statistics.xml" value="0.2917948717948718" />
+        <entry key="app/src/main/res/drawable/ic_categories_best.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/ic_categories_developers.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/ic_categories_genres.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/ic_categories_new.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/ic_categories_platforms.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/ic_categories_popular.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/ic_genre_strategy.xml" value="0.29635416666666664" />
         <entry key="app/src/main/res/drawable/ic_monkey.xml" value="0.30185185185185187" />
@@ -25,17 +31,17 @@
         <entry key="app/src/main/res/drawable/shape_round_text_view.xml" value="0.161" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2657407407407407" />
         <entry key="app/src/main/res/layout/container_error.xml" value="0.2814814814814815" />
-        <entry key="app/src/main/res/layout/container_game_card.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/container_game_card.xml" value="0.208" />
         <entry key="app/src/main/res/layout/container_game_card_shimmer.xml" value="0.2814814814814815" />
         <entry key="app/src/main/res/layout/container_game_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/container_game_list_shimmer.xml" value="0.2814814814814815" />
         <entry key="app/src/main/res/layout/container_games_list.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/container_genres.xml" value="0.29025641025641025" />
-        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.2657407407407407" />
+        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.26481481481481484" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2657407407407407" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.2657407407407407" />
-        <entry key="app/src/main/res/layout/item_game_card.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/item_game_card.xml" value="0.35135135135135137" />
         <entry key="app/src/main/res/layout/item_game_card_shimmer.xml" value="0.21754964192708334" />
         <entry key="app/src/main/res/layout/item_genre_card.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_shimmer_card.xml" value="0.29025641025641025" />
