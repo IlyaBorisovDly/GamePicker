@@ -33,49 +33,49 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
 
-            <ImageView
-                android:id="@+id/imageViewPlatformPC"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="4dp"
-                android:src="@drawable/ic_platform_pc"
-                android:visibility="gone"
-                android:contentDescription="@string/game_platform_icon_PC"
-                tools:visibility="@sample/games.json/games/pc_visibility" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewPlatformPC"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:src="@drawable/ic_platform_pc"-->
+<!--                android:visibility="gone"-->
+<!--                android:contentDescription="@string/game_platform_icon_PC"-->
+<!--                tools:visibility="@sample/games.json/games/pc_visibility" />-->
 
-            <ImageView
-                android:id="@+id/imageViewPlatformPlaystation"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/game_platform_icon_Playstation"
-                android:src="@drawable/ic_platform_playstation"
-                android:visibility="gone"
-                tools:visibility="@sample/games.json/games/playstation_visibility" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewPlatformPlaystation"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:contentDescription="@string/game_platform_icon_Playstation"-->
+<!--                android:src="@drawable/ic_platform_playstation"-->
+<!--                android:visibility="gone"-->
+<!--                tools:visibility="@sample/games.json/games/playstation_visibility" />-->
 
-            <ImageView
-                android:id="@+id/imageViewPlatformXbox"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/game_platform_icon_Xbox"
-                android:src="@drawable/ic_platform_xbox"
-                android:visibility="gone"
-                tools:visibility="@sample/games.json/games/xbox_visibility" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewPlatformXbox"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:contentDescription="@string/game_platform_icon_Xbox"-->
+<!--                android:src="@drawable/ic_platform_xbox"-->
+<!--                android:visibility="gone"-->
+<!--                tools:visibility="@sample/games.json/games/xbox_visibility" />-->
 
-            <ImageView
-                android:id="@+id/imageViewPlatformMacOs"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/game_platform_icon_Mac_Os"
-                android:src="@drawable/ic_platform_mac_os"
-                android:visibility="gone"
-                tools:visibility="@sample/games.json/games/mac_os_visibility" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewPlatformMacOs"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:contentDescription="@string/game_platform_icon_Mac_Os"-->
+<!--                android:src="@drawable/ic_platform_mac_os"-->
+<!--                android:visibility="gone"-->
+<!--                tools:visibility="@sample/games.json/games/mac_os_visibility" />-->
 
             <Space
                 android:layout_width="0dp"

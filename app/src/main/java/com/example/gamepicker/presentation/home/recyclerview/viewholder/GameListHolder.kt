@@ -7,7 +7,7 @@ import com.example.domain.GameListTitle
 import com.example.domain.entity.item.GameListItem
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ContainerGameListBinding
-import com.example.gamepicker.presentation.home.recyclerview.GameListener
+import com.example.gamepicker.presentation.home.GameListener
 import com.example.gamepicker.presentation.home.recyclerview.adapter.GameCardsAdapter
 import com.example.gamepicker.utils.makeHorizontal
 import com.example.gamepicker.utils.setHorizontalDividersInPx

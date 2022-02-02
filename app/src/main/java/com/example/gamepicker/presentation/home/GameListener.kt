@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home.recyclerview
+package com.example.gamepicker.presentation.home
 
 interface GameListener {
 

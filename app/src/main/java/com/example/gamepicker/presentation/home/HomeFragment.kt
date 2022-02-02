@@ -13,15 +13,16 @@ import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentHomeBinding
 import com.example.gamepicker.presentation.SharedViewModel
-import com.example.gamepicker.presentation.home.recyclerview.GameListener
+import com.example.gamepicker.presentation.SharedViewModelFactory
 import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
 import com.example.gamepicker.utils.disableShimmer
 import com.example.gamepicker.utils.makeVertical
+import com.example.gamepicker.utils.makeVisible
 import com.example.gamepicker.utils.setVerticalDividersInPx
 
 class HomeFragment : Fragment() {
 
-    private val viewModel: SharedViewModel by activityViewModels { HomeViewModelFactory() }
+    private val viewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -70,7 +71,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun showErrorLayout() {
-        binding.layoutError.root.visibility = View.VISIBLE
+        binding.layoutError.root.makeVisible()
     }
 
     private fun showItemsRecycler(items: List<Item>) {

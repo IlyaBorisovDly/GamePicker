@@ -10,7 +10,7 @@ import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ContainerGameCardBinding
 import com.example.gamepicker.databinding.ContainerGameListBinding
-import com.example.gamepicker.presentation.home.recyclerview.GameListener
+import com.example.gamepicker.presentation.home.GameListener
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.BaseViewHolder
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameHolder
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameListHolder

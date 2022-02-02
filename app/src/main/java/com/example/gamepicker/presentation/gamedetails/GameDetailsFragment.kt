@@ -1,5 +1,6 @@
 package com.example.gamepicker.presentation.gamedetails
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,16 +10,22 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.example.domain.Status
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
 import com.example.gamepicker.presentation.SharedViewModel
-import com.example.gamepicker.presentation.home.HomeViewModelFactory
+import com.example.gamepicker.presentation.SharedViewModelFactory
 import com.example.gamepicker.utils.disableShimmer
+import com.example.gamepicker.utils.makeVisible
 
 class GameDetailsFragment : Fragment() {
 
-    private val viewModel: SharedViewModel by activityViewModels { HomeViewModelFactory() }
+    private val viewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
     private var _binding: FragmentGameDetailsBinding? = null
     private val binding get() = _binding!!
@@ -51,23 +58,26 @@ class GameDetailsFragment : Fragment() {
 //                    binding.shimmerGameDetails.visibility = View.VISIBLE
                 }
                 is Status.Success -> {
-                    binding.shimmerGameDetails.disableShimmer()
-                    binding.scrollViewGameDetails.visibility = View.VISIBLE
 
                     val gameDetails = status.data
 
                     setGameCardRating(gameDetails.metacritic)
-                    loadPoster(gameDetails.background_image)
 
-                    binding.textViewDetailsGameName.text = gameDetails.name
-                    binding.textViewDetailsAboutContent.text = gameDetails.description
-                    binding.textViewDetailsGenresContent.text = gameDetails.genre_names
-                    binding.textViewDetailsReleasedContent.text = gameDetails.released
-                    binding.textViewDetailsPlatformsContent.text = gameDetails.platform_names
-                    binding.textViewDetailsDevelopersContent.text = gameDetails.developer_names
-                    binding.textViewDetailsTagsContent.text = gameDetails.tags
+                    with(binding) {
+                        textViewDetailsGameName.text = gameDetails.name
+                        textViewDetailsAboutContent.text = gameDetails.description
+                        textViewDetailsGenresContent.text = gameDetails.genre_names
+                        textViewDetailsPlatformsContent.text = gameDetails.platform_names
+                        textViewDetailsDevelopersContent.text = gameDetails.developer_names
+                        textViewDetailsReleasedContent.text = gameDetails.released
+                        textViewDetailsTagsContent.text = gameDetails.tags
+                        binding.scrollViewGameDetails.makeVisible()
 
+                    }
+
+                    loadPoster(gameDetails.image)
                 }
+
                 is Status.Failure -> {}
             }
         }
@@ -76,7 +86,34 @@ class GameDetailsFragment : Fragment() {
     private fun loadPoster(uri: String) {
         Glide.with(requireContext())
             .load(uri)
+            .listener(glideListener)
+            .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.imageViewGameDetailsPoster)
+    }
+
+    private val glideListener = object: RequestListener<Drawable> {
+
+        override fun onLoadFailed(
+            e: GlideException?,
+            model: Any?,
+            target: Target<Drawable>?,
+            isFirstResource: Boolean,
+        ): Boolean {
+            binding.shimmerGameDetails.disableShimmer()
+            return false
+        }
+
+
+        override fun onResourceReady(
+            resource: Drawable?,
+            model: Any?,
+            target: Target<Drawable>?,
+            dataSource: DataSource?,
+            isFirstResource: Boolean,
+        ): Boolean {
+            binding.shimmerGameDetails.disableShimmer()
+            return false
+        }
     }
 
     private fun setGameCardRating(rating: Int) {

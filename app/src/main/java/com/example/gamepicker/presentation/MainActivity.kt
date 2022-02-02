@@ -7,7 +7,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ActivityMainBinding
 import com.example.gamepicker.presentation.home.HomeFragmentDirections
-import com.example.gamepicker.presentation.home.recyclerview.GameListener
+import com.example.gamepicker.presentation.home.GameListener
 
 class MainActivity : AppCompatActivity(), GameListener {
 

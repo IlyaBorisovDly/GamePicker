@@ -26,6 +26,8 @@
 
             <include layout="@layout/shimmer_container_game_list" />
 
+            <include layout="@layout/shimmer_container_game_list" />
+
         </LinearLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>

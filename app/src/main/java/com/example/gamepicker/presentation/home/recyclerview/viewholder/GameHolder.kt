@@ -9,7 +9,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.entity.item.GameItem
 import com.example.gamepicker.databinding.ContainerGameCardBinding
-import com.example.gamepicker.presentation.home.recyclerview.GameListener
+import com.example.gamepicker.presentation.home.GameListener
 
 class GameHolder(
     private val binding: ContainerGameCardBinding,
@@ -24,7 +24,7 @@ class GameHolder(
 
     private fun loadPoster() {
         Glide.with(itemView.context)
-            .load(item.game.background_image)
+            .load(item.game.image)
             .listener(glideListener)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.imageViewGameHeader)

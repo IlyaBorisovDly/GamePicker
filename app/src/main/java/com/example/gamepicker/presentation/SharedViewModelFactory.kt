@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home
+package com.example.gamepicker.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -6,9 +6,8 @@ import com.example.data.remote.source.RemoteDataSourceImpl
 import com.example.data.repository.GameDetailsRepositoryImpl
 import com.example.data.repository.GamesRepositoryImpl
 import com.example.domain.usecase.*
-import com.example.gamepicker.presentation.SharedViewModel
 
-class HomeViewModelFactory: ViewModelProvider.Factory {
+class SharedViewModelFactory: ViewModelProvider.Factory {
 
     private val remoteDataSource by lazy {
         RemoteDataSourceImpl()
