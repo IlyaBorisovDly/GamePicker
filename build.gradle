@@ -1,7 +1,8 @@
 
 ext {
-    retrofit_version = '2.9.0'
+    navigation_version = '2.5.0-alpha01'
     jetpack_core_version = '1.7.0'
+    retrofit_version = '2.9.0'
 }
 
 buildscript {
@@ -10,8 +11,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        def navigation_version = "2.5.0-alpha01"
         classpath 'com.android.tools.build:gradle:7.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
     }
 }
 

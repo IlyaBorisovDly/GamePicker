@@ -38,10 +38,11 @@ class GetItemsUseCase(private val gamesRepository: GamesRepository) {
         }
     }
 
-    private fun getGameItemOrFail(result: Status<Game>): GameItem {
-        when (result) {
-            is Status.Success -> return result.data.toGameItem()
-            is Status.Failure -> throw Exception(result.message)
+    private fun getGameItemOrFail(status: Status<Game>): GameItem {
+        when (status) {
+            is Status.Success -> return status.data.toGameItem()
+            is Status.Failure -> throw Exception(status.message)
+            else -> throw Exception("Can't process state $status")
         }
     }
 
@@ -49,6 +50,7 @@ class GetItemsUseCase(private val gamesRepository: GamesRepository) {
         when (status) {
             is Status.Success -> return status.data.toGameListItem(title)
             is Status.Failure -> throw Exception(status.message)
+            else -> throw Exception("Can't process loading state $status")
         }
     }
 }

@@ -7,6 +7,7 @@ import com.example.domain.GameListTitle
 import com.example.domain.entity.item.GameListItem
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ContainerGameListBinding
+import com.example.gamepicker.presentation.home.recyclerview.GameListener
 import com.example.gamepicker.presentation.home.recyclerview.adapter.GameCardsAdapter
 import com.example.gamepicker.utils.makeHorizontal
 import com.example.gamepicker.utils.setHorizontalDividersInPx
@@ -15,11 +16,13 @@ class GameListHolder(
     private val binding: ContainerGameListBinding,
     private val innerDivider: Int,
     private val outerDivider: Int,
-    private val viewPool: RecyclerView.RecycledViewPool
+    private val viewPool: RecyclerView.RecycledViewPool,
+    private val listener: GameListener
 ): BaseViewHolder<ContainerGameListBinding, GameListItem>(binding) {
 
     init {
         binding.recyclerViewGameCards.apply {
+            setHasFixedSize(true)
             setRecycledViewPool(viewPool)
             setHorizontalDividersInPx(innerDivider, outerDivider)
             makeHorizontal()
@@ -31,7 +34,7 @@ class GameListHolder(
         with(binding) {
             recyclerViewGameCards.restoreState(item.state)
             textViewHeader.text = itemView.context.getTextResourceByType(item.title)
-            recyclerViewGameCards.adapter = GameCardsAdapter(item.games)
+            recyclerViewGameCards.adapter = GameCardsAdapter(item.games, listener)
         }
     }
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.gamedetails.GameDetailsFragment">
+
+    <ImageView
+        android:id="@+id/imageViewGameDetailsPosterShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/dark_gray"
+        android:contentDescription="@string/game_picture_shimmer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewGameDetailsPosterShimmer">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/dark_gray"
+            android:orientation="horizontal" />
+
+
+        <TextView
+            style="@style/Widget.GamePicker.GameDetailsNameTextViewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameDetailsTitleTextViewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameDetailsDescriptionTextViewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameDetailsTitleTextViewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameDetailsDescriptionTextViewShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Widget.GamePicker.GameDetailsMetacriticTextView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:maxLength="3"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewGameDetailsPosterShimmer"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewGameDetailsPosterShimmer"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewGameDetailsPosterShimmer"
+        android:background="@color/dark_gray" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

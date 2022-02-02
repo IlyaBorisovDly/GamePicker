@@ -1,9 +1,11 @@
 package com.example.data.remote.source
 
+import android.util.Log
 import com.example.data.remote.api.RetrofitInstance
 import com.example.data.mapper.toDomain
 import com.example.domain.Status
 import com.example.domain.entity.game.Game
+import com.example.domain.entity.game.GameDetails
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -38,6 +40,20 @@ class RemoteDataSourceImpl: RemoteDataSource {
 
     override suspend fun getPlaystationGames(): Status<List<Game>> {
         return getGames(page = 2, stores = "3")
+    }
+
+    override suspend fun getGameDetailsById(id: Int): Status<GameDetails> {
+        return try {
+            val service = RetrofitInstance.api
+            val response = service.gameDetails(id = id)
+            val body = response.body()!!
+
+            Status.Success(body.toDomain())
+        } catch (e: IOException) {
+            Status.Failure(e.message)
+        } catch (e: HttpException) {
+            Status.Failure(e.message)
+        }
     }
 
     private suspend fun getGame(name: String): Status<Game> {

@@ -1,6 +1,5 @@
 package com.example.gamepicker.presentation.home.recyclerview.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +12,16 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ItemGameCardBinding
+import com.example.gamepicker.presentation.home.recyclerview.GameListener
 
 class GameCardsAdapter(
-    private val games: List<Game>
+    private val games: List<Game>,
+    private val listener: GameListener
 ): RecyclerView.Adapter<GameCardsAdapter.GameCardHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameCardHolder {
         val inflater = LayoutInflater.from(parent.context)
         val itemBinding = ItemGameCardBinding.inflate(inflater, parent, false)
-
         return GameCardHolder(itemBinding)
     }
 
@@ -45,6 +45,10 @@ class GameCardsAdapter(
             setGameCardPlatforms()
             setGameCardRating()
             loadPoster()
+
+            itemView.setOnClickListener {
+                listener.onGameCardClicked(game.id)
+            }
         }
 
         private fun loadPoster() {

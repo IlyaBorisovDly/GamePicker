@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".presentation.home.HomeFragment">
 
     <com.facebook.shimmer.ShimmerFrameLayout
@@ -19,11 +20,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/container_game_card_shimmer" />
+            <include layout="@layout/shimmer_container_game_card" />
 
-            <include layout="@layout/container_game_list_shimmer" />
+            <include layout="@layout/shimmer_container_game_list" />
 
-            <include layout="@layout/container_game_list_shimmer" />
+            <include layout="@layout/shimmer_container_game_list" />
 
         </LinearLayout>
 

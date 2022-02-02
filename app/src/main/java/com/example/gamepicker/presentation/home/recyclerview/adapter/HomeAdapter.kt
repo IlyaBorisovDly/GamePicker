@@ -10,12 +10,14 @@ import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ContainerGameCardBinding
 import com.example.gamepicker.databinding.ContainerGameListBinding
+import com.example.gamepicker.presentation.home.recyclerview.GameListener
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.BaseViewHolder
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameHolder
 import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameListHolder
 
 class HomeAdapter(
-    private val items: List<Item>
+    private val items: List<Item>,
+    private val listener: GameListener
 ): RecyclerView.Adapter<BaseViewHolder<ViewBinding, Item>>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
@@ -53,7 +55,7 @@ class HomeAdapter(
     private fun getGameHolder(parent: ViewGroup): BaseViewHolder<*, *> {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ContainerGameCardBinding.inflate(inflater)
-        return GameHolder(binding)
+        return GameHolder(binding, listener)
     }
 
     private fun getGameListHolder(parent: ViewGroup): BaseViewHolder<*, *> {
@@ -64,6 +66,6 @@ class HomeAdapter(
         val innerDivider = resources.getDimension(R.dimen.container_game_list_inner_margin).toInt()
         val outerDivider = resources.getDimension(R.dimen.container_game_list_outer_margin).toInt()
 
-        return GameListHolder(binding, innerDivider, outerDivider, viewPool)
+        return GameListHolder(binding, innerDivider, outerDivider, viewPool, listener)
     }
 }

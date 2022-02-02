@@ -1,5 +1,6 @@
 package com.example.gamepicker.presentation.home
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentHomeBinding
 import com.example.gamepicker.presentation.SharedViewModel
+import com.example.gamepicker.presentation.home.recyclerview.GameListener
 import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
 import com.example.gamepicker.utils.disableShimmer
 import com.example.gamepicker.utils.makeVertical
@@ -24,12 +26,19 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var listener: GameListener
+
     private val innerDivider by lazy {
         requireContext().resources.getDimension(R.dimen.fragment_home_inner_margin).toInt()
     }
 
     private val outerDivider by lazy {
         requireContext().resources.getDimension(R.dimen.fragment_home_outer_margin).toInt()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as GameListener
     }
 
     override fun onCreateView(
@@ -50,8 +59,10 @@ class HomeFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.items.observe(viewLifecycleOwner) { result ->
-            binding.shimmerHome.disableShimmer()
             when (result) {
+                is Status.Loading -> {
+                    binding.shimmerHome.showShimmer(true)
+                }
                 is Status.Success -> showItemsRecycler(result.data)
                 is Status.Failure -> showErrorLayout()
             }
@@ -63,10 +74,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun showItemsRecycler(items: List<Item>) {
+        binding.shimmerHome.disableShimmer()
         binding.recyclerViewHome.apply {
             makeVertical()
             setVerticalDividersInPx(innerDivider, outerDivider)
-            adapter = HomeAdapter(items)
+            adapter = HomeAdapter(items, listener)
             visibility = RecyclerView.VISIBLE
         }
     }

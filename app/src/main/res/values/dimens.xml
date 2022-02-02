@@ -17,6 +17,6 @@
     <dimen name="container_game_list_header_margin_bottom">8dp</dimen>
 
     <!-- Game Details Fragment -->
-    <dimen name="game_details_title_vertical_padding">8dp</dimen>
-    <dimen name="game_details_title_horizontal_padding">16dp</dimen>
+    <dimen name="game_details_vertical_padding">8dp</dimen>
+    <dimen name="game_details_horizontal_padding">16dp</dimen>
 </resources>

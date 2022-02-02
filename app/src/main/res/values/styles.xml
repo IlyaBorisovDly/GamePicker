@@ -57,6 +57,26 @@
     </style>
 
     <!-- Game Details Fragment -->
+    <style name="Widget.GamePicker.GameDetailsNameTextView" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetailsNameTextViewShimmer" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@color/dark_gray</item>
+        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
+    </style>
+
     <style name="Widget.GamePicker.GameDetailsMetacriticTextView" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">20sp</item>
@@ -67,20 +87,41 @@
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">@dimen/game_details_title_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/game_details_title_vertical_padding</item>
-        <item name="android:paddingStart">@dimen/game_details_title_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/game_details_title_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetailsTitleTextViewShimmer" parent="">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/dark_gray</item>
+        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
     </style>
 
     <style name="Widget.GamePicker.GameDetailsDescriptionTextView" parent="">
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">@dimen/game_details_title_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/game_details_title_vertical_padding</item>
-        <item name="android:paddingStart">@dimen/game_details_title_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/game_details_title_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetailsDescriptionTextViewShimmer" parent="">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lines">10</item>
+        <item name="android:background">@color/dark_gray</item>
+        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
+        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
     </style>
 
     <!-- Appearances -->

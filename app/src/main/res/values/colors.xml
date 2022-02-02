@@ -19,4 +19,7 @@
     <!-- Shimmer -->
     <color name="gray">#E7E7E7</color>
     <color name="dark_gray">#C7C7C7</color>
+
+    <!-- Special -->
+    <color name="transparent">#00000000</color>
 </resources>

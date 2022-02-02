@@ -9,13 +9,20 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.entity.item.GameItem
 import com.example.gamepicker.databinding.ContainerGameCardBinding
+import com.example.gamepicker.presentation.home.recyclerview.GameListener
 
 class GameHolder(
     private val binding: ContainerGameCardBinding,
+    private val listener: GameListener
 ): BaseViewHolder<ContainerGameCardBinding, GameItem>(binding) {
 
     override fun onBind(item: GameItem) {
         super.onBind(item)
+        loadPoster()
+        binding.cardViewGameHeader.setOnClickListener { listener.onGameCardClicked(item.game.id) }
+    }
+
+    private fun loadPoster() {
         Glide.with(itemView.context)
             .load(item.game.background_image)
             .listener(glideListener)
