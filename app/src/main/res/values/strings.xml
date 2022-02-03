@@ -26,6 +26,7 @@
     <string name="game_details_related">Похожие</string>
     <string name="game_details_released">Выпущена</string>
     <string name="game_details_tags">Тэги</string>
+    <string name="game_details_screenshots">Скриншоты</string>
 
     <!-- Bottom navigation menu -->
     <string name="bottom_navigation_menu_home">Главная</string>

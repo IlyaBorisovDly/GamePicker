@@ -2,6 +2,7 @@ package com.example.gamepicker.presentation.gamedetails
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,13 +17,14 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.Status
 import com.example.domain.entity.game.GameDetails
+import com.example.domain.entity.screenshot.Screenshot
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
 import com.example.gamepicker.presentation.SharedViewModel
 import com.example.gamepicker.presentation.SharedViewModelFactory
-import com.example.gamepicker.utils.disableShimmer
-import com.example.gamepicker.utils.makeGone
-import com.example.gamepicker.utils.makeVisible
+import com.example.gamepicker.presentation.gamedetails.recyclerview.adapter.ScreenshotsAdapter
+import com.example.gamepicker.presentation.home.recyclerview.decoration.HorizontalDividerItemDecoration
+import com.example.gamepicker.utils.*
 
 class GameDetailsFragment : Fragment() {
 
@@ -30,6 +32,14 @@ class GameDetailsFragment : Fragment() {
 
     private var _binding: FragmentGameDetailsBinding? = null
     private val binding get() = _binding!!
+
+    private val innerDivider by lazy {
+        requireContext().resources.getDimension(R.dimen.game_details_screenshots_inner_margin).toInt()
+    }
+
+    private val outerDivider by lazy {
+        requireContext().resources.getDimension(R.dimen.game_details_screenshots_outer_margin).toInt()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +51,9 @@ class GameDetailsFragment : Fragment() {
 
         initObservers()
 
-        viewModel.loadGameDetailsById(gameId)
+        if (savedInstanceState == null || viewModel.gameDetails.value is Status.Failure) {
+            viewModel.loadGameDetailsById(gameId)
+        }
 
         return binding.root
     }
@@ -56,14 +68,48 @@ class GameDetailsFragment : Fragment() {
             when(status) {
                 is Status.Loading -> binding.shimmerGameDetails.makeVisible()
                 is Status.Success -> showGameDetails(status.data)
-                is Status.Failure -> {}
+                is Status.Failure -> showErrorLayout()
+            }
+        }
+
+        viewModel.gameScreenshots.observe(viewLifecycleOwner) { status ->
+            when(status) {
+                is Status.Loading -> {
+                    Log.d("myTag", "initObservers: loading") }
+                is Status.Success -> {
+                    Log.d("myTag", "initObservers: success")
+                    showScreenshotsRecycler(status.data)
+                }
+                is Status.Failure -> {
+                    Log.d("myTag", "initObservers: success")
+                }
             }
         }
     }
 
-    private fun showGameDetails(gameDetails: GameDetails) {
-        setGameCardRating(gameDetails.metacritic)
+    private fun showErrorLayout() {
+        binding.errorLayoutGameDetails.root.makeVisible()
+        binding.recyclerViewDetailsScreenshots.makeGone()
+        binding.shimmerGameDetails.disableShimmer()
+    }
 
+    private fun showGameDetails(gameDetails: GameDetails) {
+        viewModel.loadGameScreenshotsById(gameDetails.id)
+        setGameCardRating(gameDetails.metacritic)
+        setDetailsText(gameDetails)
+        loadPoster(gameDetails.image)
+        binding.scrollViewGameDetails.makeVisible()
+    }
+
+    private fun showScreenshotsRecycler(screenshots: List<Screenshot>) {
+        binding.recyclerViewDetailsScreenshots.apply {
+            if (itemDecorationCount == 0) setHorizontalDividersInPx(innerDivider, outerDivider)
+            makeHorizontal()
+            adapter = ScreenshotsAdapter(screenshots)
+        }
+    }
+
+    private fun setDetailsText(gameDetails: GameDetails) {
         with(binding) {
             textViewDetailsGameName.text = gameDetails.name
             textViewDetailsAboutContent.text = gameDetails.description
@@ -72,10 +118,7 @@ class GameDetailsFragment : Fragment() {
             textViewDetailsDevelopersContent.text = gameDetails.developer_names
             textViewDetailsReleasedContent.text = gameDetails.released
             textViewDetailsTagsContent.text = gameDetails.tags
-            scrollViewGameDetails.makeVisible()
         }
-
-        loadPoster(gameDetails.image)
     }
 
     private fun loadPoster(uri: String) {
@@ -96,7 +139,6 @@ class GameDetailsFragment : Fragment() {
             binding.shimmerGameDetails.disableShimmer()
             return false
         }
-
 
         override fun onResourceReady(
             resource: Drawable?,

@@ -5,6 +5,7 @@ import com.example.data.mapper.toDomain
 import com.example.domain.Status
 import com.example.domain.entity.game.Game
 import com.example.domain.entity.game.GameDetails
+import com.example.domain.entity.screenshot.Screenshot
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -46,6 +47,20 @@ class RemoteDataSourceImpl: RemoteDataSource {
             val service = RetrofitInstance.api
             val response = service.gameDetails(id = id)
             val body = response.body()!!
+
+            Status.Success(body.toDomain())
+        } catch (e: IOException) {
+            Status.Failure(e.message)
+        } catch (e: HttpException) {
+            Status.Failure(e.message)
+        }
+    }
+
+    override suspend fun getScreenshotsById(id: Int): Status<List<Screenshot>> {
+        return try {
+            val service = RetrofitInstance.api
+            val response = service.gameScreenshots(id)
+            val body = response.body()!!.results
 
             Status.Success(body.toDomain())
         } catch (e: IOException) {

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.data.remote.source.RemoteDataSourceImpl
 import com.example.data.repository.GameDetailsRepositoryImpl
 import com.example.data.repository.GamesRepositoryImpl
+import com.example.data.repository.ScreenshotRepositoryImpl
 import com.example.domain.usecase.*
 
 class SharedViewModelFactory: ViewModelProvider.Factory {
@@ -15,6 +16,10 @@ class SharedViewModelFactory: ViewModelProvider.Factory {
 
     private val gamesRepository by lazy {
         GamesRepositoryImpl(remoteDataSource = remoteDataSource)
+    }
+
+    private val screenshotRepository by lazy {
+        ScreenshotRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 
     private val gameDetailsRepository by lazy {
@@ -29,11 +34,16 @@ class SharedViewModelFactory: ViewModelProvider.Factory {
         GetGameDetailsByIdUseCase(gameDetailsRepository = gameDetailsRepository)
     }
 
+    private val getGameScreenshotsByIdUseCase by lazy {
+        GetGameScreenshotsByIdUseCase(screenshotRepository = screenshotRepository)
+    }
+
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return SharedViewModel(
             getItemsUseCase = getItemsUseCase,
-            getGameDetailsByIdUseCase = getGameDetailsByIdUseCase
+            getGameDetailsByIdUseCase = getGameDetailsByIdUseCase,
+            getGameScreenshotsByIdUseCase = getGameScreenshotsByIdUseCase
         ) as T
     }
 }

@@ -15,10 +15,7 @@ import com.example.gamepicker.databinding.FragmentHomeBinding
 import com.example.gamepicker.presentation.SharedViewModel
 import com.example.gamepicker.presentation.SharedViewModelFactory
 import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
-import com.example.gamepicker.utils.disableShimmer
-import com.example.gamepicker.utils.makeVertical
-import com.example.gamepicker.utils.makeVisible
-import com.example.gamepicker.utils.setVerticalDividersInPx
+import com.example.gamepicker.utils.*
 
 class HomeFragment : Fragment() {
 
@@ -50,8 +47,8 @@ class HomeFragment : Fragment() {
 
         initObservers()
 
-        viewModel.apply {
-            if (items.value == null) loadItems()
+        if (viewModel.items.value == null || viewModel.items.value is Status.Failure) {
+            viewModel.loadItems()
         }
 
         return binding.root
@@ -73,7 +70,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun showErrorLayout() {
-        binding.layoutError.root.makeVisible()
+        binding.shimmerHome.disableShimmer()
+        binding.errorLayoutHome.root.makeVisible()
     }
 
     private fun showItemsRecycler(items: List<Item>) {

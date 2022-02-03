@@ -3,6 +3,7 @@ package com.example.data.remote.source
 import com.example.domain.Status
 import com.example.domain.entity.game.Game
 import com.example.domain.entity.game.GameDetails
+import com.example.domain.entity.screenshot.Screenshot
 
 interface RemoteDataSource {
 
@@ -21,4 +22,6 @@ interface RemoteDataSource {
     suspend fun getPlaystationGames(): Status<List<Game>>
 
     suspend fun getGameDetailsById(id: Int): Status<GameDetails>
+
+    suspend fun getScreenshotsById(id: Int): Status<List<Screenshot>>
 }

@@ -34,7 +34,7 @@
 
     <include
         layout="@layout/container_error"
-        android:id="@+id/layout_error"
+        android:id="@+id/errorLayoutHome"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView

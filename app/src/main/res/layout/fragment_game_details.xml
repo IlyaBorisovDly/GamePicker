@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,6 +17,13 @@
         <include layout="@layout/shimmer_game_details" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <include
+        layout="@layout/container_error"
+        android:id="@+id/errorLayoutGameDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/scrollViewGameDetails"
@@ -36,7 +44,6 @@
                 android:contentDescription="@string/game_picture"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@sample/games.json/games/background[5]" />
@@ -63,7 +70,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageViewGameDetailsPoster"
                 tools:text="@sample/games.json/games/name[5]" />
@@ -75,7 +81,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game_details_about"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsGameName" />
 
@@ -85,11 +90,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsAbout"
-                tools:lines="10"
+                android:maxLines="12"
+                android:ellipsize="end"
                 tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/textViewDetailsScreenshots"
+                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/game_details_screenshots"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDetailsAboutContent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDetailsScreenshots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDetailsScreenshots"
+                android:paddingTop="@dimen/game_details_vertical_padding"
+                android:paddingBottom="@dimen/game_details_vertical_padding"
+                tools:paddingStart="16dp"
+                tools:orientation="horizontal"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/container_screenshot" />
+
 
             <TextView
                 android:id="@+id/textViewDetailsGenres"
@@ -98,9 +129,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game_details_genres"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsAboutContent" />
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewDetailsScreenshots" />
 
             <TextView
                 android:id="@+id/textViewDetailsGenresContent"
@@ -108,9 +138,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsGenres"
+                tools:lines="2"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
@@ -120,7 +150,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game_details_platforms"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsGenresContent" />
 
@@ -132,9 +161,9 @@
                 android:ellipsize="end"
                 android:maxLines="5"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsPlatforms"
+                tools:lines="3"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
@@ -144,7 +173,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game_details_developers"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsPlatformsContent" />
 
@@ -153,12 +181,10 @@
                 style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsDevelopers"
+                tools:lines="3"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
@@ -168,7 +194,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/game_details_released"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsDevelopersContent" />
 
@@ -179,7 +204,6 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsReleased"
                 tools:text="@tools:sample/lorem/random" />
@@ -202,9 +226,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewDetailsTags"
+                tools:lines="5"
                 tools:text="@tools:sample/lorem/random" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </LinearLayout>

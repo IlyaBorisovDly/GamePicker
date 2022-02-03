@@ -2,17 +2,13 @@ package com.example.data.remote.api
 
 import com.example.data.entity.game.GameDetailsResponse
 import com.example.data.entity.game.GameResponse
+import com.example.data.entity.screenshot.ScreenshotResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RawgService {
-
-    @GET("games/{id}")
-    suspend fun game(
-        @Path("id") id: Int? = null
-    ): Response<GameResponse>
 
     @GET("games")
     suspend fun games(
@@ -26,7 +22,17 @@ interface RawgService {
     ): Response<RawgData<List<GameResponse>>>
 
     @GET("games/{id}")
+    suspend fun game(
+        @Path("id") id: Int? = null
+    ): Response<GameResponse>
+
+    @GET("games/{id}")
     suspend fun gameDetails(
         @Path("id") id: Int? = null
     ): Response<GameDetailsResponse>
+
+    @GET("games/{id}/screenshots")
+    suspend fun gameScreenshots(
+        @Path("id") id: Int? = null
+    ): Response<RawgData<List<ScreenshotResponse>>>
 }
