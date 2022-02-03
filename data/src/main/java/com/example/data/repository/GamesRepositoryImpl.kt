@@ -7,8 +7,8 @@ import com.example.domain.repository.GamesRepository
 
 class GamesRepositoryImpl(private val remoteDataSource: RemoteDataSource): GamesRepository {
 
-    override suspend fun getHeaderGame(): Status<Game> {
-        return remoteDataSource.getHeaderGame()
+    override suspend fun getGameById(id: Int): Status<Game> {
+        return remoteDataSource.getGameById(id)
     }
 
     override suspend fun getPopularGames(): Status<List<Game>> {

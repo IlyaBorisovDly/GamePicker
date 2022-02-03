@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/container_game_list_header_margin_start"
         android:layout_marginBottom="@dimen/container_game_list_header_margin_bottom"
-        android:background="@color/gray" />
+        android:background="@color/light_gray" />
 
     <LinearLayout
         android:layout_width="match_parent"

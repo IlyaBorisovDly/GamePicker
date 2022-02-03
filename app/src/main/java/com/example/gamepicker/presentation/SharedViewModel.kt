@@ -21,10 +21,11 @@ class SharedViewModel(
     private val _gameDetails = MutableLiveData<Status<GameDetails>>()
     val gameDetails: LiveData<Status<GameDetails>> = _gameDetails
 
-    init {
+    fun loadItems() {
         _items.value = Status.Loading
+
         viewModelScope.launch {
-            _items.value = loadItems()
+            _items.apply { value = getItemsUseCase() }
         }
     }
 
@@ -32,10 +33,7 @@ class SharedViewModel(
         _gameDetails.value = Status.Loading
 
         viewModelScope.launch {
-            val details = getGameDetailsByIdUseCase(id)
-            _gameDetails.value = details
+            _gameDetails.apply { value = getGameDetailsByIdUseCase(id) }
         }
     }
-
-    private suspend fun loadItems(): Status<List<Item>> = getItemsUseCase()
 }

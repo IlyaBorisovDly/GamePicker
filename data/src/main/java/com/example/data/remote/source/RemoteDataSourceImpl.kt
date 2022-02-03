@@ -1,6 +1,5 @@
 package com.example.data.remote.source
 
-import android.util.Log
 import com.example.data.remote.api.RetrofitInstance
 import com.example.data.mapper.toDomain
 import com.example.domain.Status
@@ -14,8 +13,8 @@ private const val PAGE_SIZE = 10
 
 class RemoteDataSourceImpl: RemoteDataSource {
 
-    override suspend fun getHeaderGame(): Status<Game> {
-        return getGame(name = "God of War: Ragnarok")
+    override suspend fun getGameById(id: Int): Status<Game> {
+        return getGame(id)
     }
 
     override suspend fun getPopularGames(): Status<List<Game>> {
@@ -56,13 +55,13 @@ class RemoteDataSourceImpl: RemoteDataSource {
         }
     }
 
-    private suspend fun getGame(name: String): Status<Game> {
+    private suspend fun getGame(id: Int): Status<Game> {
         return try {
             val service = RetrofitInstance.api
-            val response = service.games(search = name)
+            val response = service.game(id = id)
             val body = response.body()!!
 
-            Status.Success(body.results[0].toDomain())
+            Status.Success(body.toDomain())
         } catch (e: IOException) {
             Status.Failure(e.message)
         } catch (e: HttpException) {

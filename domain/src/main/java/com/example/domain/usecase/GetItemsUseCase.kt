@@ -10,10 +10,12 @@ import com.example.domain.mapper.toGameItem
 import com.example.domain.mapper.toGameListItem
 import com.example.domain.repository.GamesRepository
 
+private const val GAME_ID = 494384
+
 class GetItemsUseCase(private val gamesRepository: GamesRepository) {
 
     suspend operator fun invoke(): Status<List<Item>> {
-        val headerGame = gamesRepository.getHeaderGame()
+        val headerGame = gamesRepository.getGameById(GAME_ID)
         val popularGames = gamesRepository.getPopularGames()
         val openWorldGames = gamesRepository.getOpenWorldGames()
         val multiplayerGames = gamesRepository.getMultiplayerGames()

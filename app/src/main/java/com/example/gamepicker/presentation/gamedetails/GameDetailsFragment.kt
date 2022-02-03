@@ -12,15 +12,16 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.Status
+import com.example.domain.entity.game.GameDetails
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
 import com.example.gamepicker.presentation.SharedViewModel
 import com.example.gamepicker.presentation.SharedViewModelFactory
 import com.example.gamepicker.utils.disableShimmer
+import com.example.gamepicker.utils.makeGone
 import com.example.gamepicker.utils.makeVisible
 
 class GameDetailsFragment : Fragment() {
@@ -53,41 +54,34 @@ class GameDetailsFragment : Fragment() {
     private fun initObservers() {
         viewModel.gameDetails.observe(viewLifecycleOwner) { status ->
             when(status) {
-                is Status.Loading -> {
-//                    binding.scrollViewGameDetails.visibility = View.GONE
-//                    binding.shimmerGameDetails.visibility = View.VISIBLE
-                }
-                is Status.Success -> {
-
-                    val gameDetails = status.data
-
-                    setGameCardRating(gameDetails.metacritic)
-
-                    with(binding) {
-                        textViewDetailsGameName.text = gameDetails.name
-                        textViewDetailsAboutContent.text = gameDetails.description
-                        textViewDetailsGenresContent.text = gameDetails.genre_names
-                        textViewDetailsPlatformsContent.text = gameDetails.platform_names
-                        textViewDetailsDevelopersContent.text = gameDetails.developer_names
-                        textViewDetailsReleasedContent.text = gameDetails.released
-                        textViewDetailsTagsContent.text = gameDetails.tags
-                        binding.scrollViewGameDetails.makeVisible()
-
-                    }
-
-                    loadPoster(gameDetails.image)
-                }
-
+                is Status.Loading -> binding.shimmerGameDetails.makeVisible()
+                is Status.Success -> showGameDetails(status.data)
                 is Status.Failure -> {}
             }
         }
+    }
+
+    private fun showGameDetails(gameDetails: GameDetails) {
+        setGameCardRating(gameDetails.metacritic)
+
+        with(binding) {
+            textViewDetailsGameName.text = gameDetails.name
+            textViewDetailsAboutContent.text = gameDetails.description
+            textViewDetailsGenresContent.text = gameDetails.genre_names
+            textViewDetailsPlatformsContent.text = gameDetails.platform_names
+            textViewDetailsDevelopersContent.text = gameDetails.developer_names
+            textViewDetailsReleasedContent.text = gameDetails.released
+            textViewDetailsTagsContent.text = gameDetails.tags
+            scrollViewGameDetails.makeVisible()
+        }
+
+        loadPoster(gameDetails.image)
     }
 
     private fun loadPoster(uri: String) {
         Glide.with(requireContext())
             .load(uri)
             .listener(glideListener)
-            .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding.imageViewGameDetailsPoster)
     }
 
@@ -117,14 +111,15 @@ class GameDetailsFragment : Fragment() {
     }
 
     private fun setGameCardRating(rating: Int) {
+
         if (rating == 0) {
-            binding.textViewDetailsRating.visibility = View.GONE
+            binding.textViewDetailsRating.makeGone()
             return
         }
 
-        binding.textViewDetailsRating.visibility = View.VISIBLE
         binding.textViewDetailsRating.apply {
             text = rating.toString()
+
             when (rating) {
                 in 1..49 -> setBackgroundById(R.drawable.shape_round_rectangle_red_filled)
                 in 50..74 -> setBackgroundById(R.drawable.shape_round_rectangle_yellow_filled)

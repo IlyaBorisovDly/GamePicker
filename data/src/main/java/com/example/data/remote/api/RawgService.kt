@@ -9,6 +9,11 @@ import retrofit2.http.Query
 
 interface RawgService {
 
+    @GET("games/{id}")
+    suspend fun game(
+        @Path("id") id: Int? = null
+    ): Response<GameResponse>
+
     @GET("games")
     suspend fun games(
         @Query("page") page: Int? = null,

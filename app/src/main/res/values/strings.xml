@@ -40,6 +40,7 @@
     <string name="error_icon">Изображение ошибки</string>
     <string name="game_picture">Изображение игры</string>
     <string name="game_picture_shimmer">Загрузка изображения</string>
+    <string name="game_text_shimmer">Загрузка текста</string>
     <string name="game_platform_icon_PC">Изображение платформы (ПК)</string>
     <string name="game_platform_icon_Playstation">Изображение платформы (Playstation)</string>
     <string name="game_platform_icon_Xbox">Изображение платформы (Xbox)</string>

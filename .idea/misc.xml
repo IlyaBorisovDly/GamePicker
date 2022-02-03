@@ -58,7 +58,7 @@
         <entry key="app/src/main/res/layout/layout_shimmer.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/shimmer_container_game_card.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/shimmer_container_game_list.xml" value="0.14114583333333333" />
-        <entry key="app/src/main/res/layout/shimmer_game_details.xml" value="0.14114583333333333" />
+        <entry key="app/src/main/res/layout/shimmer_game_details.xml" value="0.335" />
         <entry key="app/src/main/res/layout/shimmer_games_list.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.2657407407407407" />
       </map>

@@ -17,8 +17,9 @@
     <color name="red">#FC4B37</color>
 
     <!-- Shimmer -->
-    <color name="gray">#E7E7E7</color>
+    <color name="light_gray">#E7E7E7</color>
     <color name="dark_gray">#C7C7C7</color>
+    <color name="light_black">#2F2C2E</color>
 
     <!-- Special -->
     <color name="transparent">#00000000</color>

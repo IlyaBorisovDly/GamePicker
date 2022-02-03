@@ -50,6 +50,10 @@ class HomeFragment : Fragment() {
 
         initObservers()
 
+        viewModel.apply {
+            if (items.value == null) loadItems()
+        }
+
         return binding.root
     }
 
@@ -61,9 +65,7 @@ class HomeFragment : Fragment() {
     private fun initObservers() {
         viewModel.items.observe(viewLifecycleOwner) { result ->
             when (result) {
-                is Status.Loading -> {
-                    binding.shimmerHome.showShimmer(true)
-                }
+                is Status.Loading -> binding.shimmerHome.showShimmer(true)
                 is Status.Success -> showItemsRecycler(result.data)
                 is Status.Failure -> showErrorLayout()
             }
