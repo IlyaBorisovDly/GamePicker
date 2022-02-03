@@ -7,7 +7,7 @@ import com.example.domain.repository.ScreenshotRepository
 class GetGameScreenshotsByIdUseCase(private val screenshotRepository: ScreenshotRepository) {
 
     suspend operator fun invoke(gameId: Int): Status<List<Screenshot>> {
-        return screenshotRepository.getGameScreenshotsById(gameId)
+        return screenshotRepository.getScreenshotsByGameId(gameId)
     }
 
 }

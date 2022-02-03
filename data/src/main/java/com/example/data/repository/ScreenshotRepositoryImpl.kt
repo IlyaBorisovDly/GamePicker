@@ -7,7 +7,7 @@ import com.example.domain.repository.ScreenshotRepository
 
 class ScreenshotRepositoryImpl(private val remoteDataSource: RemoteDataSource): ScreenshotRepository {
 
-    override suspend fun getGameScreenshotsById(id: Int): Status<List<Screenshot>> {
-        return remoteDataSource.getScreenshotsById(id)
+    override suspend fun getScreenshotsByGameId(id: Int): Status<List<Screenshot>> {
+        return remoteDataSource.getScreenshotsByGameId(id)
     }
 }

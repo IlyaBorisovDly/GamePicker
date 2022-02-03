@@ -74,15 +74,9 @@ class GameDetailsFragment : Fragment() {
 
         viewModel.gameScreenshots.observe(viewLifecycleOwner) { status ->
             when(status) {
-                is Status.Loading -> {
-                    Log.d("myTag", "initObservers: loading") }
-                is Status.Success -> {
-                    Log.d("myTag", "initObservers: success")
-                    showScreenshotsRecycler(status.data)
-                }
-                is Status.Failure -> {
-                    Log.d("myTag", "initObservers: success")
-                }
+                is Status.Loading -> {}
+                is Status.Success -> showScreenshotsRecycler(status.data)
+                is Status.Failure -> {}
             }
         }
     }

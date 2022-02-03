@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.data.remote.source.RemoteDataSourceImpl
 import com.example.data.repository.GameDetailsRepositoryImpl
-import com.example.data.repository.GamesRepositoryImpl
+import com.example.data.repository.GameRepositoryImpl
 import com.example.data.repository.ScreenshotRepositoryImpl
 import com.example.domain.usecase.*
 
@@ -14,20 +14,20 @@ class SharedViewModelFactory: ViewModelProvider.Factory {
         RemoteDataSourceImpl()
     }
 
-    private val gamesRepository by lazy {
-        GamesRepositoryImpl(remoteDataSource = remoteDataSource)
-    }
-
-    private val screenshotRepository by lazy {
-        ScreenshotRepositoryImpl(remoteDataSource = remoteDataSource)
+    private val gameRepository by lazy {
+        GameRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 
     private val gameDetailsRepository by lazy {
         GameDetailsRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 
+    private val screenshotRepository by lazy {
+        ScreenshotRepositoryImpl(remoteDataSource = remoteDataSource)
+    }
+
     private val getItemsUseCase by lazy {
-        GetItemsUseCase(gamesRepository = gamesRepository)
+        GetItemsUseCase(gameRepository = gameRepository)
     }
 
     private val getGameDetailsByIdUseCase by lazy {

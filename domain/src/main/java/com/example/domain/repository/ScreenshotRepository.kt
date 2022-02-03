@@ -5,6 +5,6 @@ import com.example.domain.entity.screenshot.Screenshot
 
 interface ScreenshotRepository {
 
-    suspend fun getGameScreenshotsById(id: Int): Status<List<Screenshot>>
+    suspend fun getScreenshotsByGameId(id: Int): Status<List<Screenshot>>
 
 }
