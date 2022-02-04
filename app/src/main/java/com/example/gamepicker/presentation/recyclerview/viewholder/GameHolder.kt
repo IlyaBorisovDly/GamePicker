@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home.recyclerview.viewholder
+package com.example.gamepicker.presentation.recyclerview.viewholder
 
 import android.graphics.drawable.Drawable
 import com.bumptech.glide.Glide
@@ -9,7 +9,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.entity.item.GameItem
 import com.example.gamepicker.databinding.ContainerGameCardBinding
-import com.example.gamepicker.presentation.home.GameListener
+import com.example.gamepicker.presentation.listener.GameListener
 
 class GameHolder(
     private val binding: ContainerGameCardBinding,

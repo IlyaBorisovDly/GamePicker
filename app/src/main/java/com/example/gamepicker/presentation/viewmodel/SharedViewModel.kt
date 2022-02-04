@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation
+package com.example.gamepicker.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

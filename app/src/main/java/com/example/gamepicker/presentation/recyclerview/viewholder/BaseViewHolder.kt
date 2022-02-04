@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home.recyclerview.viewholder
+package com.example.gamepicker.presentation.recyclerview.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding

@@ -2,8 +2,8 @@ package com.example.gamepicker.utils
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gamepicker.presentation.home.recyclerview.decoration.HorizontalDividerItemDecoration
-import com.example.gamepicker.presentation.home.recyclerview.decoration.VerticalDividerItemDecoration
+import com.example.gamepicker.presentation.recyclerview.decoration.HorizontalDividerItemDecoration
+import com.example.gamepicker.presentation.recyclerview.decoration.VerticalDividerItemDecoration
 
 fun RecyclerView.makeVertical(isReversed: Boolean = false) {
     layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, isReversed)

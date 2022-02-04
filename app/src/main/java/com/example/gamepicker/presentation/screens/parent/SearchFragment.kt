@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.search
+package com.example.gamepicker.presentation.screens.parent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

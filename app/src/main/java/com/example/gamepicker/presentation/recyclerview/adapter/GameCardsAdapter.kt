@@ -1,12 +1,12 @@
-package com.example.gamepicker.presentation.home.recyclerview.adapter
+package com.example.gamepicker.presentation.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.game.Game
 import com.example.gamepicker.databinding.ItemGameCardBinding
-import com.example.gamepicker.presentation.home.GameListener
-import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameCardHolder
+import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.recyclerview.viewholder.GameCardHolder
 
 class GameCardsAdapter(
     private val games: List<Game>,

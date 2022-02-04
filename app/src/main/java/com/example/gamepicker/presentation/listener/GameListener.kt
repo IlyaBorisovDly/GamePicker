@@ -1,6 +1,7 @@
-package com.example.gamepicker.presentation.home
+package com.example.gamepicker.presentation.listener
 
 interface GameListener {
 
     fun onGameCardClicked(gameId: Int)
+
 }

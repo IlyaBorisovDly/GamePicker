@@ -1,8 +1,7 @@
-package com.example.gamepicker.presentation.gamedetails
+package com.example.gamepicker.presentation.screens
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,10 +19,9 @@ import com.example.domain.entity.game.GameDetails
 import com.example.domain.entity.screenshot.Screenshot
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
-import com.example.gamepicker.presentation.SharedViewModel
-import com.example.gamepicker.presentation.SharedViewModelFactory
-import com.example.gamepicker.presentation.gamedetails.recyclerview.adapter.ScreenshotsAdapter
-import com.example.gamepicker.presentation.home.recyclerview.decoration.HorizontalDividerItemDecoration
+import com.example.gamepicker.presentation.viewmodel.SharedViewModel
+import com.example.gamepicker.presentation.viewmodel.SharedViewModelFactory
+import com.example.gamepicker.presentation.recyclerview.adapter.ScreenshotsAdapter
 import com.example.gamepicker.utils.*
 
 class GameDetailsFragment : Fragment() {

@@ -9,26 +9,25 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.gamepicker.presentation.home.HomeFragment"
+        android:name="com.example.gamepicker.presentation.screens.parent.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
-    </fragment>
+        tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.example.gamepicker.presentation.categories.CategoriesFragment"
+        android:name="com.example.gamepicker.presentation.screens.parent.CategoriesFragment"
         android:label="categories_fragment"
         tools:layout="@layout/fragment_categories" />
 
     <fragment
         android:id="@+id/statisticsFragment"
-        android:name="com.example.gamepicker.presentation.statistics.StatisticsFragment"
+        android:name="com.example.gamepicker.presentation.screens.parent.StatisticsFragment"
         android:label="statistics_fragment"
         tools:layout="@layout/fragment_statistics" />
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.gamepicker.presentation.search.SearchFragment"
+        android:name="com.example.gamepicker.presentation.screens.parent.SearchFragment"
         android:label="search_fragment"
         tools:layout="@layout/fragment_search" />
 

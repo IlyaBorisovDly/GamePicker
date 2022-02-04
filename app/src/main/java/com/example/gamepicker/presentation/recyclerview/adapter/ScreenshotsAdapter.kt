@@ -1,11 +1,11 @@
-package com.example.gamepicker.presentation.gamedetails.recyclerview.adapter
+package com.example.gamepicker.presentation.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.screenshot.Screenshot
 import com.example.gamepicker.databinding.ItemScreenshotBinding
-import com.example.gamepicker.presentation.gamedetails.recyclerview.viewholder.ScreenshotViewHolder
+import com.example.gamepicker.presentation.recyclerview.viewholder.ScreenshotViewHolder
 
 class ScreenshotsAdapter(
     private val screenshots: List<Screenshot>

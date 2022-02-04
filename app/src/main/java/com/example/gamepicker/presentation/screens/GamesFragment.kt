@@ -1,8 +1,6 @@
-package com.example.gamepicker.presentation
+package com.example.gamepicker.presentation.screens
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +11,10 @@ import com.example.domain.Status
 import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGamesBinding
-import com.example.gamepicker.presentation.home.GameListener
-import com.example.gamepicker.presentation.home.recyclerview.adapter.HomeAdapter
+import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.viewmodel.SharedViewModel
+import com.example.gamepicker.presentation.viewmodel.SharedViewModelFactory
+import com.example.gamepicker.presentation.recyclerview.adapter.HomeAdapter
 import com.example.gamepicker.utils.disableShimmer
 import com.example.gamepicker.utils.makeVertical
 import com.example.gamepicker.utils.makeVisible

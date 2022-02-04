@@ -1,12 +1,11 @@
-package com.example.gamepicker.presentation.home.recyclerview.viewholder
+package com.example.gamepicker.presentation.recyclerview.viewholder
 
 import android.os.Parcelable
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.item.GameListItem
 import com.example.gamepicker.databinding.ContainerGameListBinding
-import com.example.gamepicker.presentation.home.GameListener
-import com.example.gamepicker.presentation.home.recyclerview.adapter.GameCardsAdapter
+import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.recyclerview.adapter.GameCardsAdapter
 import com.example.gamepicker.utils.makeHorizontal
 import com.example.gamepicker.utils.setHorizontalDividersInPx
 

@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home.recyclerview.adapter
+package com.example.gamepicker.presentation.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,10 +10,10 @@ import com.example.domain.entity.item.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.ContainerGameCardBinding
 import com.example.gamepicker.databinding.ContainerGameListBinding
-import com.example.gamepicker.presentation.home.GameListener
-import com.example.gamepicker.presentation.home.recyclerview.viewholder.BaseViewHolder
-import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameHolder
-import com.example.gamepicker.presentation.home.recyclerview.viewholder.GameListHolder
+import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.recyclerview.viewholder.BaseViewHolder
+import com.example.gamepicker.presentation.recyclerview.viewholder.GameHolder
+import com.example.gamepicker.presentation.recyclerview.viewholder.GameListHolder
 
 class HomeAdapter(
     private val items: List<Item>,

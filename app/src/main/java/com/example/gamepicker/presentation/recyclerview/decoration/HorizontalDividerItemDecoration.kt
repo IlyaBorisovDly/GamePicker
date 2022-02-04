@@ -1,4 +1,4 @@
-package com.example.gamepicker.presentation.home.recyclerview.decoration
+package com.example.gamepicker.presentation.recyclerview.decoration
 
 import android.graphics.Rect
 import android.view.View
