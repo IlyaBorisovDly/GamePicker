@@ -74,9 +74,9 @@ class GameDetailsFragment : Fragment() {
 
         viewModel.gameScreenshots.observe(viewLifecycleOwner) { status ->
             when(status) {
-                is Status.Loading -> {}
+                is Status.Loading -> binding.recyclerViewDetailsScreenshots.makeInvisible()
                 is Status.Success -> showScreenshotsRecycler(status.data)
-                is Status.Failure -> {}
+                is Status.Failure -> showErrorLayout()
             }
         }
     }
@@ -100,6 +100,7 @@ class GameDetailsFragment : Fragment() {
             if (itemDecorationCount == 0) setHorizontalDividersInPx(innerDivider, outerDivider)
             makeHorizontal()
             adapter = ScreenshotsAdapter(screenshots)
+            makeVisible()
         }
     }
 
