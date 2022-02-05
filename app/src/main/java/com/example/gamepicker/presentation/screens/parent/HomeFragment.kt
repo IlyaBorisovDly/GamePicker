@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentHomeBinding
-import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.listeners.GameListener
 import com.example.gamepicker.presentation.screens.GamesFragmentDirections
 
 class HomeFragment : Fragment(), GameListener {

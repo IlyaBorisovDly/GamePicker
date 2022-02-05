@@ -7,17 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
-import com.example.domain.Category
-import com.example.domain.Status
-import com.example.domain.entity.item.Item
-import com.example.domain.entity.item.ResultItem
-import com.example.domain.mapper.toResultItemList
+import com.example.domain.entities.states.Status
+import com.example.domain.entities.items.Item
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentResultBinding
-import com.example.gamepicker.presentation.listener.GameListener
-import com.example.gamepicker.presentation.recyclerview.adapter.ItemsAdapter
-import com.example.gamepicker.presentation.viewmodel.SharedViewModel
-import com.example.gamepicker.presentation.viewmodel.SharedViewModelFactory
+import com.example.gamepicker.presentation.listeners.GameListener
+import com.example.gamepicker.presentation.recyclerview.adapters.ItemsAdapter
+import com.example.gamepicker.presentation.viewmodels.SharedViewModel
+import com.example.gamepicker.presentation.viewmodels.SharedViewModelFactory
 import com.example.gamepicker.utils.*
 
 class ResultFragment : Fragment() {

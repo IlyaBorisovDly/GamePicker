@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
-import com.example.domain.Category
+import com.example.domain.entities.enums.Category
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentCategoriesBinding
-import com.example.gamepicker.presentation.listener.CategoryListener
-import com.example.gamepicker.presentation.listener.GameListener
+import com.example.gamepicker.presentation.listeners.CategoryListener
+import com.example.gamepicker.presentation.listeners.GameListener
 import com.example.gamepicker.presentation.screens.CategoriesListFragmentDirections
 import com.example.gamepicker.presentation.screens.ResultFragmentDirections
 

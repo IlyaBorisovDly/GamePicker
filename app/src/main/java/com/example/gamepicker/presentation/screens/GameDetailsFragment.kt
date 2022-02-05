@@ -14,14 +14,14 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.example.domain.Status
-import com.example.domain.entity.game.GameDetails
-import com.example.domain.entity.screenshot.Screenshot
+import com.example.domain.entities.states.Status
+import com.example.domain.entities.GameDetails
+import com.example.domain.entities.Screenshot
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
-import com.example.gamepicker.presentation.viewmodel.SharedViewModel
-import com.example.gamepicker.presentation.viewmodel.SharedViewModelFactory
-import com.example.gamepicker.presentation.recyclerview.adapter.ScreenshotsAdapter
+import com.example.gamepicker.presentation.viewmodels.SharedViewModel
+import com.example.gamepicker.presentation.viewmodels.SharedViewModelFactory
+import com.example.gamepicker.presentation.recyclerview.adapters.ScreenshotsAdapter
 import com.example.gamepicker.utils.*
 
 class GameDetailsFragment : Fragment() {

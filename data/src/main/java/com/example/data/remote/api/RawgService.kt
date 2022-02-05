@@ -1,14 +1,13 @@
 package com.example.data.remote.api
 
-import com.example.data.entity.creator.CreatorResponse
-import com.example.data.entity.developer.DeveloperResponse
-import com.example.data.entity.game.GameDetailsResponse
-import com.example.data.entity.game.GameResponse
-import com.example.data.entity.genre.GenreResponse
-import com.example.data.entity.platform.PlatformResponse
-import com.example.data.entity.publisher.PublisherResponse
-import com.example.data.entity.screenshot.ScreenshotResponse
-import com.example.domain.entity.genre.Genre
+import com.example.data.entities.CreatorResponse
+import com.example.data.entities.DeveloperResponse
+import com.example.data.entities.GameDetailsResponse
+import com.example.data.entities.GameResponse
+import com.example.data.entities.GenreResponse
+import com.example.data.entities.PlatformResponse
+import com.example.data.entities.PublisherResponse
+import com.example.data.entities.ScreenshotResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
