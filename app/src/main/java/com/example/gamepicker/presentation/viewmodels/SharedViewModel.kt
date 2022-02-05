@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.entities.enums.Category
 import com.example.domain.entities.states.Status
 import com.example.domain.entities.GameDetails
 import com.example.domain.entities.items.Item
 import com.example.domain.entities.items.ItemResult
 import com.example.domain.entities.Screenshot
+import com.example.domain.entities.enums.Category
 import com.example.domain.usecases.*
 import kotlinx.coroutines.launch
 

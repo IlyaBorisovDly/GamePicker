@@ -28,7 +28,7 @@
             app:destination="@id/categoriesListFragment" />
         <argument
             android:name="category"
-            app:argType="com.example.domain.Category" />
+            app:argType="com.example.domain.entities.enums.Category" />
     </fragment>
 
     <fragment
