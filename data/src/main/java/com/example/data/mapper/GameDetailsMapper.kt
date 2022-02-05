@@ -11,7 +11,6 @@ fun GameDetailsResponse.toDomain(): GameDetails {
     val release = released ?: "N/A"
 
     val genreNames = genres.joinToString { it.name }
-    val platformNames = platforms.joinToString { it.platform.name }
     val developerNames = developers.joinToString { it.name }
     val tagNames = tags.joinToString { it.name }
 
@@ -23,7 +22,6 @@ fun GameDetailsResponse.toDomain(): GameDetails {
         description = description_raw,
         released = release,
         genre_names = genreNames,
-        platform_names = platformNames,
         developer_names = developerNames,
         tags = tagNames)
 }

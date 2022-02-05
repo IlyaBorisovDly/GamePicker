@@ -1,4 +1,4 @@
-package com.example.data.entity.game
+package com.example.data.entity.developer
 
 data class DeveloperResponse(
     val id: Int,

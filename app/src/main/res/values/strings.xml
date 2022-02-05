@@ -3,11 +3,10 @@
 
     <!-- Categories -->
     <string name="categories">Categories</string>
-    <string name="categories_best">Best</string>
-    <string name="categories_popular">Popular</string>
-    <string name="categories_new">New</string>
-    <string name="categories_genres">Genres</string>
+    <string name="categories_creators">Creators</string>
+    <string name="categories_publishers">Publishers</string>
     <string name="categories_developers">Developers</string>
+    <string name="categories_genres">Genres</string>
     <string name="categories_platforms">Platforms</string>
 
     <!-- Game Details -->

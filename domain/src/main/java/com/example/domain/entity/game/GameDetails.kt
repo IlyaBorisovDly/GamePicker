@@ -8,7 +8,6 @@ data class GameDetails(
     val description: String,
     val released: String,
     val genre_names: String,
-    val platform_names: String,
     val developer_names: String,
     val tags: String
 )

@@ -17,7 +17,8 @@ class HomeFragment : Fragment(), GameListener {
     private val binding get() = _binding!!
 
     private val homeNavController by lazy {
-        val homeNavHost = childFragmentManager.findFragmentById(R.id.fragmentContainerViewHome) as NavHostFragment
+        val homeNavHost =
+            childFragmentManager.findFragmentById(R.id.fragmentContainerViewHome) as NavHostFragment
         homeNavHost.navController
     }
 

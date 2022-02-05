@@ -14,7 +14,7 @@ import com.example.gamepicker.databinding.FragmentGamesBinding
 import com.example.gamepicker.presentation.listener.GameListener
 import com.example.gamepicker.presentation.viewmodel.SharedViewModel
 import com.example.gamepicker.presentation.viewmodel.SharedViewModelFactory
-import com.example.gamepicker.presentation.recyclerview.adapter.HomeAdapter
+import com.example.gamepicker.presentation.recyclerview.adapter.ItemsAdapter
 import com.example.gamepicker.utils.disableShimmer
 import com.example.gamepicker.utils.makeVertical
 import com.example.gamepicker.utils.makeVisible
@@ -47,8 +47,8 @@ class GamesFragment : Fragment() {
 
         initObservers()
 
-        if (viewModel.items.value == null || viewModel.items.value is Status.Failure) {
-            viewModel.loadItems()
+        if (viewModel.homeItems.value == null || viewModel.homeItems.value is Status.Failure) {
+            viewModel.loadHomeItems()
         }
 
         return binding.root
@@ -62,7 +62,7 @@ class GamesFragment : Fragment() {
 
 
     private fun initObservers() {
-        viewModel.items.observe(viewLifecycleOwner) { result ->
+        viewModel.homeItems.observe(viewLifecycleOwner) { result ->
             when (result) {
                 is Status.Loading -> binding.shimmerHome.showShimmer(true)
                 is Status.Success -> showItemsRecycler(result.data)
@@ -81,7 +81,7 @@ class GamesFragment : Fragment() {
         binding.recyclerViewHome.apply {
             makeVertical()
             setVerticalDividersInPx(innerDivider, outerDivider)
-            adapter = HomeAdapter(items, listener)
+            adapter = ItemsAdapter(items, listener)
             visibility = RecyclerView.VISIBLE
         }
     }

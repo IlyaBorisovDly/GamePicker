@@ -80,9 +80,11 @@ class GameDetailsFragment : Fragment() {
     }
 
     private fun showErrorLayout() {
-        binding.errorLayoutGameDetails.root.makeVisible()
-        binding.recyclerViewDetailsScreenshots.makeGone()
-        binding.shimmerGameDetails.disableShimmer()
+        with(binding) {
+            errorLayoutGameDetails.root.makeVisible()
+            recyclerViewDetailsScreenshots.makeGone()
+            shimmerGameDetails.disableShimmer()
+        }
     }
 
     private fun showGameDetails(gameDetails: GameDetails) {
@@ -107,7 +109,7 @@ class GameDetailsFragment : Fragment() {
             textViewDetailsGameName.text = gameDetails.name
             textViewDetailsAboutContent.text = gameDetails.description
             textViewDetailsGenresContent.text = gameDetails.genre_names
-            textViewDetailsPlatformsContent.text = gameDetails.platform_names
+//            textViewDetailsPlatformsContent.text = gameDetails.platform_names
             textViewDetailsDevelopersContent.text = gameDetails.developer_names
             textViewDetailsReleasedContent.text = gameDetails.released
             textViewDetailsTagsContent.text = gameDetails.tags
