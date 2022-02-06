@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -33,6 +34,8 @@ class GameDetailsFragment : Fragment() {
     private var _binding: FragmentGameDetailsBinding? = null
     private val binding get() = _binding!!
 
+    private val args:GameDetailsFragmentArgs by navArgs()
+
     private val innerDivider by lazy {
         requireContext().resources.getDimension(R.dimen.game_details_screenshots_inner_margin).toInt()
     }
@@ -47,12 +50,10 @@ class GameDetailsFragment : Fragment() {
     ): View {
         _binding = FragmentGameDetailsBinding.inflate(inflater, container, false)
 
-        val gameId = GameDetailsFragmentArgs.fromBundle(requireArguments()).gameId
-
         initObservers()
 
         if (savedInstanceState == null || viewModel.gameDetails.value is Status.Failure) {
-            viewModel.loadGameDetailsById(gameId)
+            viewModel.loadGameDetailsById(args.gameId)
         }
 
         return binding.root
