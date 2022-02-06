@@ -32,11 +32,11 @@ class GamesFragment : Fragment() {
     }
 
     private val innerDivider by lazy {
-        requireContext().resources.getDimension(R.dimen.fragment_home_inner_margin).toInt()
+        requireContext().resources.getDimension(R.dimen.fragment_games_margin_inner).toInt()
     }
 
     private val outerDivider by lazy {
-        requireContext().resources.getDimension(R.dimen.fragment_home_outer_margin).toInt()
+        requireContext().resources.getDimension(R.dimen.fragment_games_margin_outer).toInt()
     }
 
     override fun onCreateView(

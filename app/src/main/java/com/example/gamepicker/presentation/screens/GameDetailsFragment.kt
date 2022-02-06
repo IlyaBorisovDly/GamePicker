@@ -72,7 +72,7 @@ class GameDetailsFragment : Fragment() {
 
         viewModel.gameScreenshots.observe(viewLifecycleOwner) { status ->
             when(status) {
-                is Status.Loading -> binding.recyclerViewDetailsScreenshots.makeInvisible()
+                is Status.Loading -> binding.recyclerViewGameDetailsScreenshots.makeInvisible()
                 is Status.Success -> showScreenshotsRecycler(status.data)
                 is Status.Failure -> showErrorLayout()
             }
@@ -81,8 +81,8 @@ class GameDetailsFragment : Fragment() {
 
     private fun showErrorLayout() {
         with(binding) {
-            errorLayoutGameDetails.root.makeVisible()
-            recyclerViewDetailsScreenshots.makeGone()
+            containerErrorGameDetails.root.makeVisible()
+            recyclerViewGameDetailsScreenshots.makeGone()
             shimmerGameDetails.disableShimmer()
         }
     }
@@ -96,7 +96,7 @@ class GameDetailsFragment : Fragment() {
     }
 
     private fun showScreenshotsRecycler(screenshots: List<Screenshot>) {
-        binding.recyclerViewDetailsScreenshots.apply {
+        binding.recyclerViewGameDetailsScreenshots.apply {
             if (itemDecorationCount == 0) setHorizontalDividersInPx(innerDivider, outerDivider)
             makeHorizontal()
             adapter = ScreenshotsAdapter(screenshots)
@@ -106,13 +106,13 @@ class GameDetailsFragment : Fragment() {
 
     private fun setDetailsText(gameDetails: GameDetails) {
         with(binding) {
-            textViewDetailsGameName.text = gameDetails.name
-            textViewDetailsAboutContent.text = gameDetails.description
-            textViewDetailsGenresContent.text = gameDetails.genre_names
+            textViewGameDetailsName.text = gameDetails.name
+            textViewGameDetailsAboutContent.text = gameDetails.description
+            textViewGameDetailsGenresContent.text = gameDetails.genre_names
 //            textViewDetailsPlatformsContent.text = gameDetails.platform_names
-            textViewDetailsDevelopersContent.text = gameDetails.developer_names
-            textViewDetailsReleasedContent.text = gameDetails.released
-            textViewDetailsTagsContent.text = gameDetails.tags
+            textViewGameDetailsDevelopersContent.text = gameDetails.developer_names
+            textViewGameDetailsReleasedContent.text = gameDetails.released
+            textViewGameDetailsTagsContent.text = gameDetails.tags
         }
     }
 
@@ -150,11 +150,11 @@ class GameDetailsFragment : Fragment() {
     private fun setGameCardRating(rating: Int) {
 
         if (rating == 0) {
-            binding.textViewDetailsRating.makeGone()
+            binding.textViewGameDetailsRating.makeGone()
             return
         }
 
-        binding.textViewDetailsRating.apply {
+        binding.textViewGameDetailsRating.apply {
             text = rating.toString()
 
             when (rating) {

@@ -8,12 +8,8 @@
     tools:layout_marginBottom="16dp">
 
     <TextView
-        android:id="@+id/textViewHeader"
-        style="@style/Widget.GamePicker.HeaderTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/container_game_list_header_margin_start"
-        android:layout_marginBottom="@dimen/container_game_list_header_margin_bottom"
+        android:id="@+id/textViewGameCardBasicContainerHeader"
+        style="@style/Widget.GamePicker.GameCardBasicContainer.HeaderTextView"
         tools:text="@sample/game_list_container_titles" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,7 +18,7 @@
         android:layout_height="180dp"
         tools:orientation="horizontal"
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_marginStart="16dp"
-        tools:listitem="@layout/item_game_card" />
+        tools:layout_marginStart="@dimen/game_card_basic_container_margin_outer"
+        tools:listitem="@layout/item_game_card_basic" />
 
 </LinearLayout>

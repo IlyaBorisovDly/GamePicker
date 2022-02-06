@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/game_card_basic_width"
+    android:layout_height="@dimen/game_card_basic_height"
+    android:layout_marginEnd="@dimen/game_card_basic_container_margin_inner"
+    app:cardBackgroundColor="@color/light_gray"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/imageViewShimmerCardPoster"
+            android:layout_width="@dimen/game_card_basic_width"
+            android:layout_height="@dimen/game_card_basic_poster_height"
+            android:background="@color/dark_gray"
+            android:contentDescription="@string/game_picture_shimmer"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameCardBasic.NameTextViewShimmer"
+            android:layout_marginTop="@dimen/game_card_basic_name_padding_vertical" />
+
+        <TextView
+            style="@style/Widget.GamePicker.GameCardBasic.NameTextViewShimmer"
+            android:layout_marginTop="@dimen/game_card_basic_name_padding_vertical" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -8,13 +8,13 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.entities.items.ItemGame
-import com.example.gamepicker.databinding.ContainerGameCardBinding
+import com.example.gamepicker.databinding.ItemGameCardHeadingBinding
 import com.example.gamepicker.presentation.listeners.GameListener
 
-class GameHolder(
-    private val binding: ContainerGameCardBinding,
+class HeadingGameHolder(
+    private val binding: ItemGameCardHeadingBinding,
     private val listener: GameListener
-): BaseViewHolder<ContainerGameCardBinding, ItemGame>(binding) {
+): BaseViewHolder<ItemGameCardHeadingBinding, ItemGame>(binding) {
 
     override fun onBind(item: ItemGame) {
         super.onBind(item)

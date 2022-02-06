@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/game_card_basic_width"
+    android:layout_height="@dimen/game_card_basic_height"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    tools:layout_marginEnd="@dimen/game_card_basic_container_margin_inner">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewGameCardBasicPoster"
+            android:layout_width="@dimen/game_card_basic_width"
+            android:layout_height="@dimen/game_card_basic_poster_height"
+            android:contentDescription="@string/game_picture"
+            android:scaleType="centerCrop"
+            tools:src="@sample/games.json/games/background" />
+
+        <TextView
+            android:id="@+id/textViewGameCardName"
+            style="@style/Widget.GamePicker.GameCardBasic.NameTextView."
+            tools:text="@sample/games.json/games/name" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

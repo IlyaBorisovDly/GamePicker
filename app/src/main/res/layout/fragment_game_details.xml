@@ -9,18 +9,18 @@
     tools:context=".presentation.screens.GameDetailsFragment">
 
     <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_game_details"
+        android:id="@+id/shimmerGameDetails"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
 
-        <include layout="@layout/shimmer_game_details" />
+        <include layout="@layout/shimmer_fragment_game_details" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
     <include
         layout="@layout/container_error"
-        android:id="@+id/errorLayoutGameDetails"
+        android:id="@+id/containerErrorGameDetails"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
@@ -48,16 +48,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@sample/games.json/games/background[5]" />
 
-
             <TextView
-                android:id="@+id/textViewDetailsRating"
-                style="@style/Widget.GamePicker.GameDetailsMetacriticTextView"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:id="@+id/textViewGameDetailsRating"
+                style="@style/Widget.GamePicker.GameDetails.RatingTextView"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/shape_round_rectangle_green_filled"
-                android:gravity="center"
-                android:maxLength="3"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewGameDetailsPoster"
                 app:layout_constraintEnd_toEndOf="@+id/imageViewGameDetailsPoster"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewGameDetailsPoster"
@@ -65,172 +59,145 @@
                 tools:text="@sample/games.json/games/metacritic" />
 
             <TextView
-                android:id="@+id/textViewDetailsGameName"
-                style="@style/Widget.GamePicker.GameDetailsNameTextView"
+                android:id="@+id/textViewGameDetailsName"
+                style="@style/Widget.GamePicker.GameDetails.NameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageViewGameDetailsPoster"
                 tools:text="@sample/games.json/games/name[5]" />
 
             <TextView
-                android:id="@+id/textViewDetailsAbout"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsAbout"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_about"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsGameName" />
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsName" />
 
             <TextView
-                android:id="@+id/textViewDetailsAboutContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/textViewGameDetailsAboutContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsAbout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsAbout"
                 android:maxLines="12"
                 android:ellipsize="end"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/textViewDetailsScreenshots"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsScreenshots"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_screenshots"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsAboutContent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsAboutContent" />
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewDetailsScreenshots"
+                android:id="@+id/recyclerViewGameDetailsScreenshots"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsScreenshots"
-                android:paddingTop="@dimen/game_details_vertical_padding"
-                android:paddingBottom="@dimen/game_details_vertical_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsScreenshots"
+                android:paddingTop="@dimen/game_details_padding_vertical"
+                android:paddingBottom="@dimen/game_details_padding_vertical"
                 tools:paddingStart="16dp"
                 tools:orientation="horizontal"
                 tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_screenshot" />
+                tools:listitem="@layout/item_screenshot_image" />
 
 
             <TextView
-                android:id="@+id/textViewDetailsGenres"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsGenres"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_genres"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerViewDetailsScreenshots" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewGameDetailsScreenshots" />
 
             <TextView
-                android:id="@+id/textViewDetailsGenresContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/textViewGameDetailsGenresContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsGenres"
-                tools:lines="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsGenres"
+                tools:maxLines="2"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/textViewDetailsPlatforms"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsPlatforms"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_platforms"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsGenresContent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsGenresContent" />
 
             <TextView
-                android:id="@+id/textViewDetailsPlatformsContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsPlatformsContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 android:ellipsize="end"
-                android:maxLines="5"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsPlatforms"
-                tools:lines="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsPlatforms"
+                tools:maxLines="3"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/textViewDetailsDevelopers"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsDevelopers"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_developers"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsPlatformsContent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsPlatformsContent" />
 
             <TextView
-                android:id="@+id/textViewDetailsDevelopersContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/textViewGameDetailsDevelopersContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsDevelopers"
-                tools:lines="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsDevelopers"
+                tools:maxLines="3"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/textViewDetailsReleased"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsReleased"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_released"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsDevelopersContent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsDevelopersContent" />
 
             <TextView
-                android:id="@+id/textViewDetailsReleasedContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/textViewGameDetailsReleasedContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsReleased"
-                tools:text="@tools:sample/lorem/random" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsReleased"
+                tools:text="@tools:sample/lorem/random"
+                tools:maxLines="1" />
 
             <TextView
-                android:id="@+id/textViewDetailsTags"
-                style="@style/Widget.GamePicker.GameDetailsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsTags"
+                style="@style/Widget.GamePicker.GameDetails.HeaderTextView"
                 android:text="@string/game_details_tags"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsReleasedContent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsReleasedContent" />
 
             <TextView
-                android:id="@+id/textViewDetailsTagsContent"
-                style="@style/Widget.GamePicker.GameDetailsDescriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewGameDetailsTagsContent"
+                style="@style/Widget.GamePicker.GameDetails.ContentTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewDetailsTags"
-                tools:lines="5"
+                app:layout_constraintTop_toBottomOf="@id/textViewGameDetailsTags"
+                tools:maxLines="5"
                 tools:text="@tools:sample/lorem/random" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 </LinearLayout>

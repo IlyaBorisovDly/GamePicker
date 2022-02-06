@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Home Fragment -->
-    <dimen name="fragment_home_inner_margin">16dp</dimen>
-    <dimen name="fragment_home_outer_margin">16dp</dimen>
+    <!-- Games fragment -->
 
-    <!-- Game Card Container -->
-    <dimen name="container_game_card_height">220dp</dimen>
-    <dimen name="container_game_card_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_games_margin_inner">8dp</dimen>
+    <dimen name="fragment_games_margin_outer">16dp</dimen>
 
-    <!-- Game List Container   -->
-    <dimen name="container_game_list_inner_margin">8dp</dimen>
-    <dimen name="container_game_list_outer_margin">16dp</dimen>
+    <dimen name="fragment_games_shimmer_margin_inner">16dp</dimen>
 
-    <dimen name="container_game_list_header_margin_start">16dp</dimen>
-    <dimen name="container_game_list_header_margin_bottom">8dp</dimen>
+    <!-- Heading Game Card -->
+
+    <dimen name="game_card_heading_corner_radius">10dp</dimen>
+    <dimen name="game_card_heading_elevation">0dp</dimen>
+
+    <dimen name="game_card_heading_poster_width">380dp</dimen>
+    <dimen name="game_card_heading_poster_height">220dp</dimen>
+
+    <dimen name="game_card_heading_horizontal_margin">16dp</dimen>
+
+    <dimen name="game_card_heading_title_padding_horizontal">8dp</dimen>
+
+    <!-- Basic Game Card Container -->
+
+    <dimen name="game_card_basic_container_header_margin_horizontal">16dp</dimen>
+    <dimen name="game_card_basic_container_header_margin_bottom">8dp</dimen>
+
+    <dimen name="game_card_basic_container_margin_inner">8dp</dimen>
+    <dimen name="game_card_basic_container_margin_outer">16dp</dimen>
+
+    <!-- Basic Game Card -->
+
+    <dimen name="game_card_basic_width">150dp</dimen>
+    <dimen name="game_card_basic_height">170dp</dimen>
+
+    <dimen name="game_card_basic_poster_height">100dp</dimen>
+
+    <dimen name="game_card_basic_rating_diameter">20dp</dimen>
+
+    <dimen name="game_card_basic_rating_margin_end">8dp</dimen>
+    <dimen name="game_card_basic_rating_margin_bottom">8dp</dimen>
+
+    <dimen name="game_card_basic_name_padding_horizontal">8dp</dimen>
+    <dimen name="game_card_basic_name_padding_vertical">8dp</dimen>
 
     <!-- Game Details Fragment -->
+
+    <dimen name="game_details_padding_vertical">8dp</dimen>
+    <dimen name="game_details_padding_horizontal">16dp</dimen>
+
+    <dimen name="game_details_rating_diameter">60dp</dimen>
+
     <dimen name="game_details_screenshots_inner_margin">8dp</dimen>
     <dimen name="game_details_screenshots_outer_margin">16dp</dimen>
 
-    <dimen name="game_details_vertical_padding">8dp</dimen>
-    <dimen name="game_details_horizontal_padding">16dp</dimen>
+    <!-- Categories List Fragment -->
+
+    <dimen name="categories_list_vertical_padding">16dp</dimen>
+    <dimen name="categories_list_horizontal_padding">16dp</dimen>
+    <dimen name="categories_list_item_drawable_padding">8dp</dimen>
+
+    <dimen name="categories_list_title_size">24sp</dimen>
+    <dimen name="categories_list_item_size">20sp</dimen>
+
+    <!-- Error Container -->
+
+    <dimen name="error_icon_diameter">50dp</dimen>
+    
 </resources>

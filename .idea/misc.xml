@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/background_gradient_card.xml" value="0.29635416666666664" />
         <entry key="app/src/main/res/drawable-v24/ic_genre_strategy.xml" value="0.29635416666666664" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1035" />
         <entry key="app/src/main/res/drawable/background_gradient_card.xml" value="0.29635416666666664" />
         <entry key="app/src/main/res/drawable/ic_bottom_navigation_categories.xml" value="0.2917948717948718" />
         <entry key="app/src/main/res/drawable/ic_bottom_navigation_home.xml" value="0.2917948717948718" />
@@ -20,6 +21,7 @@
         <entry key="app/src/main/res/drawable/ic_categories_publishers.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/ic_genre_strategy.xml" value="0.29635416666666664" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1035" />
         <entry key="app/src/main/res/drawable/ic_monkey.xml" value="0.30185185185185187" />
         <entry key="app/src/main/res/drawable/ic_platform_android.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_platform_ios.xml" value="0.3109375" />
@@ -46,19 +48,25 @@
         <entry key="app/src/main/res/layout/container_result_game.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/container_screenshot.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_categories_list.xml" value="0.29025641025641025" />
+        <entry key="app/src/main/res/layout/fragment_categories_list.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_game_details.xml" value="0.15412186379928317" />
+        <entry key="app/src/main/res/layout/fragment_game_details_shimmer.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_games.xml" value="0.12708333333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.26481481481481484" />
         <entry key="app/src/main/res/layout/fragment_result.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2657407407407407" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.2657407407407407" />
         <entry key="app/src/main/res/layout/item_game_card.xml" value="0.35135135135135137" />
+        <entry key="app/src/main/res/layout/item_game_card_basic.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_game_card_basic_container.xml" value="0.14114583333333333" />
+        <entry key="app/src/main/res/layout/item_game_card_basic_container_shimmer.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/item_game_card_black.xml" value="0.29025641025641025" />
+        <entry key="app/src/main/res/layout/item_game_card_heading.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/item_game_card_shimmer.xml" value="0.21754964192708334" />
         <entry key="app/src/main/res/layout/item_game_card_white.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/item_genre_card.xml" value="0.45" />
         <entry key="app/src/main/res/layout/item_result.xml" value="0.5396290050590219" />
+        <entry key="app/src/main/res/layout/item_result_card.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/item_result_game.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_screenshot.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_shimmer_card.xml" value="0.29025641025641025" />
@@ -68,8 +76,12 @@
         <entry key="app/src/main/res/layout/layout_shimmer.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/shimmer_container_game_card.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/shimmer_container_game_list.xml" value="0.14114583333333333" />
+        <entry key="app/src/main/res/layout/shimmer_fragment_game_details.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/shimmer_game_details.xml" value="0.335" />
         <entry key="app/src/main/res/layout/shimmer_games_list.xml" value="0.29025641025641025" />
+        <entry key="app/src/main/res/layout/shimmer_item_game_card_basic.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/shimmer_item_game_card_basic_container.xml" value="0.14114583333333333" />
+        <entry key="app/src/main/res/layout/shimmer_item_game_card_heading.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.2657407407407407" />
       </map>
     </option>

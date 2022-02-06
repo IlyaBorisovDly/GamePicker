@@ -12,7 +12,7 @@
         android:id="@+id/shimmer_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/fragment_home_outer_margin"
+        android:paddingTop="@dimen/fragment_games_margin_outer"
         tools:visibility="gone">
 
         <LinearLayout
@@ -20,13 +20,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_container_game_card" />
+            <include layout="@layout/shimmer_item_game_card_heading" />
 
-            <include layout="@layout/shimmer_container_game_list" />
+            <include layout="@layout/shimmer_item_game_card_basic_container" />
 
-            <include layout="@layout/shimmer_container_game_list" />
+            <include layout="@layout/shimmer_item_game_card_basic_container" />
 
-            <include layout="@layout/shimmer_container_game_list" />
+            <include layout="@layout/shimmer_item_game_card_basic_container" />
 
         </LinearLayout>
 
@@ -43,5 +43,5 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         tools:visibility="visible"
-        tools:listitem="@layout/container_game_list" />
+        tools:listitem="@layout/item_game_card_basic_container" />
 </LinearLayout>

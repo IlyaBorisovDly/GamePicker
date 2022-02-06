@@ -11,11 +11,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageViewGameCardPoster"
+            android:id="@+id/imageViewResultCardPoster"
             android:layout_width="200dp"
             android:layout_height="225dp"
             android:contentDescription="@string/game_picture"
@@ -28,17 +27,12 @@
 
         <TextView
             android:id="@+id/textViewGameCardName"
+            style="@style/Widget.GamePicker.Result.TextView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="#812B282A"
-            android:gravity="center"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/imageViewGameCardPoster"
-            app:layout_constraintStart_toStartOf="@id/imageViewGameCardPoster"
+            app:layout_constraintEnd_toEndOf="@id/imageViewResultCardPoster"
+            app:layout_constraintStart_toStartOf="@id/imageViewResultCardPoster"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@sample/games.json/games/name" />
 

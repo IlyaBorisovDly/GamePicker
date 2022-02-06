@@ -24,8 +24,9 @@
     <string name="bottom_navigation_menu_statistics">Statistics</string>
     <string name="bottom_navigation_menu_search">Search</string>
 
-    <!-- Error messages -->
+    <!-- Special -->
     <string name="error_message">Упс! Что-то пошло не так…</string>
+    <string name="under_construction">Under Construction</string>
 
     <!-- Content descriptions -->
     <string name="error_icon">Error icon</string>
@@ -36,5 +37,6 @@
     <string name="game_platform_icon_Playstation">Playstation platform icon</string>
     <string name="game_platform_icon_Xbox">Xbox platform icon</string>
     <string name="game_platform_icon_Mac_Os">MacOS platform icon</string>
+
 
 </resources>

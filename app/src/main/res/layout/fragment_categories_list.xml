@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:elevation="0dp"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".presentation.screens.parent.CategoriesFragment">
 
     <TextView
         android:id="@+id/textViewCategoriesHeader"
-        style="@style/Widget.GamePicker.CategoriesHeaderTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/Widget.GamePicker.CategoriesList.TitleTextView"
         android:text="@string/categories" />
 
     <TextView
         android:id="@+id/textViewCategoriesCreators"
-        style="@style/Widget.GamePicker.CategoriesListItemTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        style="@style/Widget.GamePicker.CategoriesList.ItemTextView"
         android:text="@string/categories_creators"
         app:drawableStartCompat="@drawable/ic_categories_creators" />
 
     <TextView
         android:id="@+id/textViewCategoriesPublishers"
-        style="@style/Widget.GamePicker.CategoriesListItemTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        style="@style/Widget.GamePicker.CategoriesList.ItemTextView"
         android:text="@string/categories_publishers"
         app:drawableStartCompat="@drawable/ic_categories_publishers" />
 
     <TextView
         android:id="@+id/textViewCategoriesDevelopers"
-        style="@style/Widget.GamePicker.CategoriesListItemTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        style="@style/Widget.GamePicker.CategoriesList.ItemTextView"
         android:text="@string/categories_developers"
         app:drawableStartCompat="@drawable/ic_categories_developers" />
 
     <TextView
         android:id="@+id/textViewCategoriesGenres"
-        style="@style/Widget.GamePicker.CategoriesListItemTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        style="@style/Widget.GamePicker.CategoriesList.ItemTextView"
         android:text="@string/categories_genres"
         app:drawableStartCompat="@drawable/ic_categories_genres" />
 
     <TextView
         android:id="@+id/textViewCategoriesPlatforms"
-        style="@style/Widget.GamePicker.CategoriesListItemTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="8dp"
+        style="@style/Widget.GamePicker.CategoriesList.ItemTextView"
         android:text="@string/categories_platforms"
         app:drawableStartCompat="@drawable/ic_categories_platforms" />
 

@@ -9,13 +9,11 @@ import com.example.domain.entities.items.ItemGameList
 import com.example.domain.entities.items.Item
 import com.example.domain.entities.items.ItemResult
 import com.example.gamepicker.R
-import com.example.gamepicker.databinding.ContainerGameCardBinding
-import com.example.gamepicker.databinding.ContainerGameListBinding
-import com.example.gamepicker.databinding.ItemResultBinding
+import com.example.gamepicker.databinding.*
 import com.example.gamepicker.presentation.listeners.GameListener
 import com.example.gamepicker.presentation.recyclerview.viewholders.BaseViewHolder
-import com.example.gamepicker.presentation.recyclerview.viewholders.GameHolder
-import com.example.gamepicker.presentation.recyclerview.viewholders.GameListHolder
+import com.example.gamepicker.presentation.recyclerview.viewholders.HeadingGameHolder
+import com.example.gamepicker.presentation.recyclerview.viewholders.BasicGameContainerHolder
 import com.example.gamepicker.presentation.recyclerview.viewholders.ResultHolder
 
 class ItemsAdapter(
@@ -28,9 +26,9 @@ class ItemsAdapter(
     @Suppress("UNCHECKED_CAST")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<ViewBinding, Item> {
         when (viewType) {
-            R.layout.container_game_card -> getGameHolder(parent)
-            R.layout.container_game_list -> getGameListHolder(parent)
-            R.layout.item_result -> getResultHolder(parent)
+            R.layout.item_game_card_heading -> getGameHolder(parent)
+            R.layout.item_game_card_basic_container -> getGameListHolder(parent)
+            R.layout.item_result_card -> getResultHolder(parent)
             else -> throw IllegalArgumentException("View type not found: $viewType")
         }.also {
             return it as BaseViewHolder<ViewBinding, Item>
@@ -48,9 +46,9 @@ class ItemsAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return when (items[position]) {
-            is ItemGame -> R.layout.container_game_card
-            is ItemGameList -> R.layout.container_game_list
-            is ItemResult -> R.layout.item_result
+            is ItemGame -> R.layout.item_game_card_heading
+            is ItemGameList -> R.layout.item_game_card_basic_container
+            is ItemResult -> R.layout.item_result_card
             else -> throw IllegalArgumentException("Illegal type: ${items[position]}")
         }
     }
@@ -59,24 +57,24 @@ class ItemsAdapter(
 
     private fun getGameHolder(parent: ViewGroup): BaseViewHolder<*, *> {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ContainerGameCardBinding.inflate(inflater)
-        return GameHolder(binding, listener)
+        val binding = ItemGameCardHeadingBinding.inflate(inflater)
+        return HeadingGameHolder(binding, listener)
     }
 
     private fun getGameListHolder(parent: ViewGroup): BaseViewHolder<*, *> {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ContainerGameListBinding.inflate(inflater)
+        val binding = ItemGameCardBasicContainerBinding.inflate(inflater)
 
         val resources = parent.context.resources
-        val innerDivider = resources.getDimension(R.dimen.container_game_list_inner_margin).toInt()
-        val outerDivider = resources.getDimension(R.dimen.container_game_list_outer_margin).toInt()
+        val innerDivider = resources.getDimension(R.dimen.game_card_basic_container_margin_inner).toInt()
+        val outerDivider = resources.getDimension(R.dimen.game_card_basic_container_margin_outer).toInt()
 
-        return GameListHolder(binding, innerDivider, outerDivider, viewPool, listener)
+        return BasicGameContainerHolder(binding, innerDivider, outerDivider, viewPool, listener)
     }
 
     private fun getResultHolder(parent: ViewGroup): BaseViewHolder<*, *> {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemResultBinding.inflate(inflater)
+        val binding = ItemResultCardBinding.inflate(inflater)
         return ResultHolder(binding)
     }
 }

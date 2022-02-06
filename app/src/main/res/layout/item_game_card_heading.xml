@@ -8,21 +8,18 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewGameHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/container_game_card_horizontal_margin"
-        android:layout_marginEnd="@dimen/container_game_card_horizontal_margin"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
+        style="@style/Widget.GamePicker.GameCardHeading.Container"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="@dimen/game_card_heading_corner_radius"
+        app:cardElevation="@dimen/game_card_heading_elevation">
 
         <ImageView
             android:id="@+id/imageViewGameHeader"
-            android:layout_width="380dp"
-            android:layout_height="@dimen/container_game_card_height"
+            android:layout_width="@dimen/game_card_heading_poster_width"
+            android:layout_height="@dimen/game_card_heading_poster_height"
             android:contentDescription="@string/game_picture"
             android:scaleType="centerCrop"
             tools:srcCompat="@sample/games.json/games/background[0]" />
@@ -30,14 +27,9 @@
 
     <TextView
         android:id="@+id/textViewGameHeaderTitle"
-        style="@style/Widget.GamePicker.GameHeaderTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        style="@style/Widget.GamePicker.GameCardHeading.TitleTextView"
         android:layout_marginTop="16dp"
-        android:background="@color/black"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@sample/games.json/games/name[0]" />

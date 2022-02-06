@@ -4,10 +4,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.domain.entities.Screenshot
-import com.example.gamepicker.databinding.ItemScreenshotBinding
+import com.example.gamepicker.databinding.ItemScreenshotImageBinding
 
-class ScreenshotViewHolder(
-    private val binding: ItemScreenshotBinding
+class ScreenshotHolder(
+    private val binding: ItemScreenshotImageBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private lateinit var screenshot: Screenshot

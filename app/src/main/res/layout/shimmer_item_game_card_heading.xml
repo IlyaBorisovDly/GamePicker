@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.GamePicker.GameCardHeading.Container"
+    android:layout_marginBottom="@dimen/fragment_games_margin_inner"
+    app:cardBackgroundColor="@color/dark_gray"
+    app:cardCornerRadius="@dimen/game_card_heading_corner_radius"
+    app:cardElevation="@dimen/game_card_heading_elevation" />

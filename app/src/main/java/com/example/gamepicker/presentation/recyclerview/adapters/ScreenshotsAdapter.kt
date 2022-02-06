@@ -4,20 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entities.Screenshot
-import com.example.gamepicker.databinding.ItemScreenshotBinding
-import com.example.gamepicker.presentation.recyclerview.viewholders.ScreenshotViewHolder
+import com.example.gamepicker.databinding.ItemScreenshotImageBinding
+import com.example.gamepicker.presentation.recyclerview.viewholders.ScreenshotHolder
 
 class ScreenshotsAdapter(
     private val screenshots: List<Screenshot>
-): RecyclerView.Adapter<ScreenshotViewHolder>() {
+): RecyclerView.Adapter<ScreenshotHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScreenshotViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScreenshotHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val itemBinding = ItemScreenshotBinding.inflate(inflater, parent, false)
-        return ScreenshotViewHolder(itemBinding)
+        val itemBinding = ItemScreenshotImageBinding.inflate(inflater, parent, false)
+        return ScreenshotHolder(itemBinding)
     }
 
-    override fun onBindViewHolder(holder: ScreenshotViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ScreenshotHolder, position: Int) {
         holder.onBind(screenshots[position])
     }
 

@@ -2,38 +2,13 @@
 <resources>
     <!-- Styles -->
 
-    <!-- Home fragment -->
-    <style name="Widget.GamePicker.GameHeaderTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
 
-    <style name="Widget.GamePicker.HeaderTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
 
-    <style name="Widget.GamePicker.CategoriesHeaderTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-    </style>
 
-    <style name="Widget.GamePicker.CategoriesListItemTextView" parent="">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-    </style>
+
+
+
+
 
     <style name="Widget.GamePicker.GameCardRatingTextView" parent="">
         <item name="fontFamily">@font/inter_medium</item>
@@ -44,12 +19,6 @@
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="Widget.GamePicker.ErrorTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Widget.GamePicker.UserNameTextView" parent="">
@@ -64,82 +33,210 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <!-- Game Details Fragment -->
-    <style name="Widget.GamePicker.GameDetailsNameTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
-    </style>
+
+
 
     <style name="Widget.GamePicker.GameDetailsNameTextViewShimmer" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">24sp</item>
         <item name="android:background">@color/dark_gray</item>
-        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginTop">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginStart">@dimen/game_details_padding_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_padding_horizontal</item>
     </style>
 
-    <style name="Widget.GamePicker.GameDetailsMetacriticTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
 
-    <style name="Widget.GamePicker.GameDetailsTitleTextView" parent="">
-        <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
-    </style>
+
+
 
     <style name="Widget.GamePicker.GameDetailsTitleTextViewShimmer" parent="">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">20sp</item>
         <item name="android:background">@color/dark_gray</item>
-        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginTop">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginStart">@dimen/game_details_padding_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_padding_horizontal</item>
     </style>
 
-    <style name="Widget.GamePicker.GameDetailsDescriptionTextView" parent="">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:paddingStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/game_details_horizontal_padding</item>
-    </style>
+
 
     <style name="Widget.GamePicker.GameDetailsDescriptionTextViewShimmer" parent="">
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lines">10</item>
         <item name="android:background">@color/dark_gray</item>
-        <item name="android:layout_marginTop">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginBottom">@dimen/game_details_vertical_padding</item>
-        <item name="android:layout_marginStart">@dimen/game_details_horizontal_padding</item>
-        <item name="android:layout_marginEnd">@dimen/game_details_horizontal_padding</item>
+        <item name="android:layout_marginTop">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/game_details_padding_vertical</item>
+        <item name="android:layout_marginStart">@dimen/game_details_padding_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/game_details_padding_horizontal</item>
     </style>
 
-    <!-- Appearances -->
-    <style name="Appearance.GamePicker.CircleImage" parent="">
-        <item name="cornerSize">50%</item>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Heading Game Card -->
+
+    <style name="Widget.GamePicker.GameCardHeading.Container" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/game_card_heading_poster_height</item>
+        <item name="android:layout_marginStart">@dimen/game_card_heading_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/game_card_heading_horizontal_margin</item>
     </style>
 
-    <style name="TextAppearance.GamePicker.TabLayoutText" parent="Widget.MaterialComponents.TabLayout">
+    <style name="Widget.GamePicker.GameCardHeading.TitleTextView" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/game_card_heading_title_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/game_card_heading_title_padding_horizontal</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <!-- Basic Game Card Container -->
+
+    <style name="Widget.GamePicker.GameCardBasicContainer.HeaderTextView" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/game_card_basic_container_header_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/game_card_basic_container_header_margin_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/game_card_basic_container_header_margin_bottom</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Basic Game Card -->
+
+    <style name="Widget.GamePicker.GameCardBasic.NameTextView." parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:paddingStart">@dimen/game_card_basic_name_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/game_card_basic_name_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/game_card_basic_name_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/game_card_basic_name_padding_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameCardBasic.NameTextViewShimmer" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/game_card_basic_name_padding_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/game_card_basic_name_padding_horizontal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/dark_gray</item>
+    </style>
+
+    <!-- Game Details Fragment -->
+
+    <style name="Widget.GamePicker.GameDetails.RatingTextView" parent="">
+        <item name="android:layout_width">@dimen/game_details_rating_diameter</item>
+        <item name="android:layout_height">@dimen/game_details_rating_diameter</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">"@drawable/shape_round_rectangle_green_filled"</item>
+        <item name="android:maxLength">3</item>
+    </style>
+
+    <!-- Parent -->
+    <style name="Widget.GamePicker.GameDetails.ParentTextView" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/game_details_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/game_details_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/game_details_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/game_details_padding_horizontal</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetails.NameTextView" parent="Widget.GamePicker.GameDetails.ParentTextView">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetails.HeaderTextView" parent="Widget.GamePicker.GameDetails.ParentTextView">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetails.ContentTextView" parent="Widget.GamePicker.GameDetails.ParentTextView">
+        <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">14sp</item>
-        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- Categories List Fragment -->
+
+    <!-- Parent -->
+    <style name="Widget.GamePicker.CategoriesList.ParentTextView" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingStart">@dimen/categories_list_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/categories_list_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/categories_list_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/categories_list_vertical_padding</item>
+    </style>
+
+    <!-- Child -->
+    <style name="Widget.GamePicker.CategoriesList.TitleTextView" parent="Widget.GamePicker.CategoriesList.ParentTextView">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">@dimen/categories_list_title_size</item>
+    </style>
+
+    <style name="Widget.GamePicker.CategoriesList.ItemTextView" parent="Widget.GamePicker.CategoriesList.ParentTextView">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/categories_list_item_size</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:drawablePadding">@dimen/categories_list_item_drawable_padding</item>
+    </style>
+
+    <!-- Result Fragment -->
+    <style name="Widget.GamePicker.Result.TextView" parent="">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/blur_black</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Error Container -->
+
+    <style name="Widget.GamePicker.Error.TextView" parent="">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Fragments Under Construction -->
+
+    <style name="Widget.GamePicker.UnderConstruction.TextView" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:text">@string/under_construction</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

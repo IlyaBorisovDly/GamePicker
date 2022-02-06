@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/fragment_games_shimmer_margin_inner">
+
+    <TextView
+        style="@style/Widget.GamePicker.GameCardBasicContainer.HeaderTextView"
+        android:layout_width="200dp"
+        android:background="@color/dark_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/game_card_basic_container_margin_outer"
+        android:paddingEnd="0dp">
+
+        <include layout="@layout/shimmer_item_game_card_basic" />
+
+        <include layout="@layout/shimmer_item_game_card_basic" />
+
+        <include layout="@layout/shimmer_item_game_card_basic" />
+
+    </LinearLayout>
+
+</LinearLayout>
