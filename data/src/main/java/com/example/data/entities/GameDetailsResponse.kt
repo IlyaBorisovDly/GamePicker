@@ -9,5 +9,6 @@ data class GameDetailsResponse(
     val developers: List<DeveloperResponse>,
     val genres: List<GenreResponse>,
     val tags: List<TagResponse>,
-    val description_raw: String
+    val description_raw: String,
+    val parent_platforms: List<ParentPlatformResponse>
 )

@@ -14,6 +14,9 @@ fun GameDetailsResponse.toDomain(): GameDetails {
     val developerNames = developers.joinToString { it.name }
     val tagNames = tags.joinToString { it.name }
 
+    val parentPlatforms = parent_platforms.toDomain()
+    val parentPlatformNames = parentPlatforms.joinToString { it.name }
+
     return GameDetails(
         id = id,
         name = name,
@@ -21,7 +24,11 @@ fun GameDetailsResponse.toDomain(): GameDetails {
         metacritic = metacritic,
         description = description_raw,
         released = release,
-        genre_names = genreNames,
-        developer_names = developerNames,
-        tags = tagNames)
+        genreNames = genreNames,
+        developerNames = developerNames,
+        tags = tagNames,
+        parentPlatforms = parentPlatforms,
+        parentPlatformNames = parentPlatformNames
+
+    )
 }

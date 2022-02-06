@@ -7,7 +7,9 @@ data class GameDetails(
     val metacritic: Int,
     val description: String,
     val released: String,
-    val genre_names: String,
-    val developer_names: String,
+    val parentPlatforms: List<Platform>,
+    val genreNames: String,
+    val developerNames: String,
+    val parentPlatformNames: String,
     val tags: String
 )

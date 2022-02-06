@@ -16,7 +16,9 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.domain.entities.states.Status
 import com.example.domain.entities.GameDetails
+import com.example.domain.entities.Platform
 import com.example.domain.entities.Screenshot
+import com.example.domain.entities.enums.ParentPlatform
 import com.example.gamepicker.R
 import com.example.gamepicker.databinding.FragmentGameDetailsBinding
 import com.example.gamepicker.presentation.viewmodels.SharedViewModel
@@ -90,6 +92,8 @@ class GameDetailsFragment : Fragment() {
     private fun showGameDetails(gameDetails: GameDetails) {
         viewModel.loadGameScreenshotsById(gameDetails.id)
         setGameCardRating(gameDetails.metacritic)
+        hideAllPlatformIcons()
+        showGamePlatformIcons(gameDetails.parentPlatforms)
         setDetailsText(gameDetails)
         loadPoster(gameDetails.image)
         binding.scrollViewGameDetails.makeVisible()
@@ -104,13 +108,41 @@ class GameDetailsFragment : Fragment() {
         }
     }
 
+    private fun showGamePlatformIcons(parentPlatforms: List<Platform>) {
+        parentPlatforms.forEach { platform ->
+            when(platform.id) {
+                ParentPlatform.Pc.id -> {
+                    binding.imageViewGameDetailsPlatformPc.makeVisible()
+                }
+                ParentPlatform.Playstation.id -> {
+                    binding.imageViewGameDetailsPlatformPlaystation.makeVisible()
+                }
+                ParentPlatform.Xbox.id -> {
+                    binding.imageViewGameDetailsPlatformXbox.makeVisible()
+                }
+                ParentPlatform.MacOs.id -> {
+                    binding.imageViewGameDetailsPlatformMacOs.makeVisible()
+                }
+            }
+        }
+    }
+
+    private fun hideAllPlatformIcons() {
+        with(binding) {
+            imageViewGameDetailsPlatformPc.makeGone()
+            imageViewGameDetailsPlatformPlaystation.makeGone()
+            imageViewGameDetailsPlatformXbox.makeGone()
+            imageViewGameDetailsPlatformMacOs.makeGone()
+        }
+    }
+
     private fun setDetailsText(gameDetails: GameDetails) {
         with(binding) {
             textViewGameDetailsName.text = gameDetails.name
             textViewGameDetailsAboutContent.text = gameDetails.description
-            textViewGameDetailsGenresContent.text = gameDetails.genre_names
-//            textViewDetailsPlatformsContent.text = gameDetails.platform_names
-            textViewGameDetailsDevelopersContent.text = gameDetails.developer_names
+            textViewGameDetailsGenresContent.text = gameDetails.genreNames
+            textViewGameDetailsPlatformsContent.text = gameDetails.parentPlatformNames
+            textViewGameDetailsDevelopersContent.text = gameDetails.developerNames
             textViewGameDetailsReleasedContent.text = gameDetails.released
             textViewGameDetailsTagsContent.text = gameDetails.tags
         }

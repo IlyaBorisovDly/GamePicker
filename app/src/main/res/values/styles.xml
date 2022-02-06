@@ -167,6 +167,20 @@
         <item name="android:paddingEnd">@dimen/game_details_padding_horizontal</item>
     </style>
 
+    <style name="Widget.GamePicker.GameDetails.PlatformLayout" parent="">
+        <item name="android:paddingTop">@dimen/game_details_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/game_details_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/game_details_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/game_details_padding_horizontal</item>
+    </style>
+
+    <style name="Widget.GamePicker.GameDetails.PlatformIcon" parent="">
+        <item name="android:layout_width">@dimen/game_details_platform_icon_diameter</item>
+        <item name="android:layout_height">@dimen/game_details_platform_icon_diameter</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
     <style name="Widget.GamePicker.GameDetails.NameTextView" parent="Widget.GamePicker.GameDetails.ParentTextView">
         <item name="fontFamily">@font/inter_medium</item>
         <item name="android:textSize">24sp</item>

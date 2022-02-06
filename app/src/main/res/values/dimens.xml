@@ -50,6 +50,8 @@
 
     <dimen name="game_details_rating_diameter">60dp</dimen>
 
+    <dimen name="game_details_platform_icon_diameter">30dp</dimen>
+
     <dimen name="game_details_screenshots_inner_margin">8dp</dimen>
     <dimen name="game_details_screenshots_outer_margin">16dp</dimen>
 

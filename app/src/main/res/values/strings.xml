@@ -33,10 +33,6 @@
     <string name="game_picture">Game picture</string>
     <string name="game_picture_shimmer">Image shimmer</string>
     <string name="game_text_shimmer">Загрузка текста</string>
-    <string name="game_platform_icon_PC">PC platform icon</string>
-    <string name="game_platform_icon_Playstation">Playstation platform icon</string>
-    <string name="game_platform_icon_Xbox">Xbox platform icon</string>
-    <string name="game_platform_icon_Mac_Os">MacOS platform icon</string>
-
+    <string name="game_details_platform_icon">Platform icon</string>
 
 </resources>

@@ -58,6 +58,46 @@
                 tools:ignore="TextContrastCheck"
                 tools:text="@sample/games.json/games/metacritic" />
 
+            <LinearLayout
+                android:id="@+id/linearLayoutPlatforms"
+                style="@style/Widget.GamePicker.GameDetails.PlatformLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textViewGameDetailsRating"
+                app:layout_constraintTop_toBottomOf="@id/imageViewGameDetailsPoster">
+
+                <ImageView
+                    android:id="@+id/imageViewGameDetailsPlatformPc"
+                    style="@style/Widget.GamePicker.GameDetails.PlatformIcon"
+                    android:src="@drawable/ic_platform_pc"
+                    android:contentDescription="@string/game_details_platform_icon"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/imageViewGameDetailsPlatformPlaystation"
+                    style="@style/Widget.GamePicker.GameDetails.PlatformIcon"
+                    android:src="@drawable/ic_platform_playstation"
+                    android:contentDescription="@string/game_details_platform_icon"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/imageViewGameDetailsPlatformXbox"
+                    style="@style/Widget.GamePicker.GameDetails.PlatformIcon"
+                    android:src="@drawable/ic_platform_xbox"
+                    android:contentDescription="@string/game_details_platform_icon"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/imageViewGameDetailsPlatformMacOs"
+                    style="@style/Widget.GamePicker.GameDetails.PlatformIcon"
+                    android:src="@drawable/ic_platform_mac_os"
+                    android:contentDescription="@string/game_details_platform_icon"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/textViewGameDetailsName"
                 style="@style/Widget.GamePicker.GameDetails.NameTextView"
@@ -65,7 +105,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageViewGameDetailsPoster"
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutPlatforms"
                 tools:text="@sample/games.json/games/name[5]" />
 
             <TextView
