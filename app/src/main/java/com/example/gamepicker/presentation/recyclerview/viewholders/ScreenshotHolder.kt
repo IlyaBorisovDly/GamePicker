@@ -21,6 +21,6 @@ class ScreenshotHolder(
         Glide.with(itemView.context)
             .load(screenshot.image)
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(binding.root)
+            .into(binding.imageViewScreenshot)
     }
 }

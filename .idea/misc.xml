@@ -49,7 +49,7 @@
         <entry key="app/src/main/res/layout/container_screenshot.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_categories_list.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_game_details.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_game_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_game_details_shimmer.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/fragment_games.xml" value="0.12708333333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.26481481481481484" />
@@ -69,6 +69,7 @@
         <entry key="app/src/main/res/layout/item_result_card.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/item_result_game.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_screenshot.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_screenshot_image.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/item_shimmer_card.xml" value="0.29025641025641025" />
         <entry key="app/src/main/res/layout/item_shimmer_header.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/item_shimmer_header_game.xml" value="0.29025641025641025" />

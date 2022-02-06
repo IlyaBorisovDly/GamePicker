@@ -76,7 +76,10 @@ class GameDetailsFragment : Fragment() {
         viewModel.gameScreenshots.observe(viewLifecycleOwner) { status ->
             when(status) {
                 is Status.Loading -> binding.recyclerViewGameDetailsScreenshots.makeInvisible()
-                is Status.Success -> showScreenshotsRecycler(status.data)
+                is Status.Success -> {
+                    showScreenshotsRecycler(status.data)
+                    binding.shimmerGameDetails.disableShimmer()
+                }
                 is Status.Failure -> showErrorLayout()
             }
         }
