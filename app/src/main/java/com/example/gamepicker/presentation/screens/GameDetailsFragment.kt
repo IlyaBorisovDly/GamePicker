@@ -26,6 +26,8 @@ import com.example.gamepicker.presentation.viewmodels.SharedViewModel
 import com.example.gamepicker.presentation.viewmodels.SharedViewModelFactory
 import com.example.gamepicker.presentation.recyclerview.adapters.ScreenshotsAdapter
 import com.example.gamepicker.utils.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class GameDetailsFragment : Fragment() {
 
@@ -147,7 +149,7 @@ class GameDetailsFragment : Fragment() {
             textViewGameDetailsGenresContent.text = gameDetails.genreNames
             textViewGameDetailsPlatformsContent.text = gameDetails.parentPlatformNames
             textViewGameDetailsDevelopersContent.text = gameDetails.developerNames
-            textViewGameDetailsReleasedContent.text = gameDetails.released
+            textViewGameDetailsReleasedContent.text = getReleaseDate(gameDetails.released)
             textViewGameDetailsTagsContent.text = gameDetails.tags
         }
     }
@@ -203,5 +205,15 @@ class GameDetailsFragment : Fragment() {
 
     private fun TextView.setBackgroundById(id: Int) {
         background = ContextCompat.getDrawable(requireContext(), id)
+    }
+
+    private fun getReleaseDate(release: String?): String {
+        if (release.isNullOrBlank()) return "N/A"
+
+        val inputFormatter = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val outputFormatter = SimpleDateFormat("dd MMMM yyyy", Locale.US)
+        val releaseFormatted = inputFormatter.parse(release)!!
+
+        return outputFormatter.format(releaseFormatted)
     }
 }

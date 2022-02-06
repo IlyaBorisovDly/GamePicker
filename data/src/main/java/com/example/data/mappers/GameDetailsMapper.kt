@@ -8,14 +8,12 @@ private const val REPLACER_IMAGE =
 
 fun GameDetailsResponse.toDomain(): GameDetails {
     val image = background_image ?: REPLACER_IMAGE
-    val release = released ?: "N/A"
+    val parentPlatforms = parent_platforms.toDomain()
 
+    val parentPlatformNames = parentPlatforms.joinToString { it.name }
     val genreNames = genres.joinToString { it.name }
     val developerNames = developers.joinToString { it.name }
     val tagNames = tags.joinToString { it.name }
-
-    val parentPlatforms = parent_platforms.toDomain()
-    val parentPlatformNames = parentPlatforms.joinToString { it.name }
 
     return GameDetails(
         id = id,
@@ -23,12 +21,11 @@ fun GameDetailsResponse.toDomain(): GameDetails {
         image = image,
         metacritic = metacritic,
         description = description_raw,
-        released = release,
+        released = released,
         genreNames = genreNames,
         developerNames = developerNames,
         tags = tagNames,
         parentPlatforms = parentPlatforms,
         parentPlatformNames = parentPlatformNames
-
     )
 }
