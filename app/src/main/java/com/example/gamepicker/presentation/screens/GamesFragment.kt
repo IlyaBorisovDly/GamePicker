@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.example.data.Constants.HEADING_IMAGE_ID
 import com.example.domain.entities.states.Status
 import com.example.domain.entities.items.Item
 import com.example.gamepicker.R
@@ -48,7 +49,7 @@ class GamesFragment : Fragment() {
         initObservers()
 
         if (viewModel.homeItems.value == null || viewModel.homeItems.value is Status.Failure) {
-            viewModel.loadHomeItems()
+            viewModel.loadHomeItems(HEADING_IMAGE_ID)
         }
 
         return binding.root

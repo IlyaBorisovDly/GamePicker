@@ -32,11 +32,11 @@ class SharedViewModel(
     private val _categoryResults = MutableLiveData<Status<List<ItemResult>>>()
     val categoryResults: LiveData<Status<List<ItemResult>>> = _categoryResults
 
-    fun loadHomeItems() {
+    fun loadHomeItems(headingGameId: Int) {
         _homeItems.value = Status.Loading
 
         viewModelScope.launch {
-            _homeItems.apply { value = getItemsUseCase() }
+            _homeItems.apply { value = getItemsUseCase(headingGameId) }
         }
     }
 

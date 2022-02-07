@@ -10,14 +10,12 @@ import com.example.domain.mappers.toGameItem
 import com.example.domain.mappers.toGameListItem
 import com.example.domain.repositories.GameRepository
 
-private const val GAME_ID = 494384
-
 class GetItemsUseCase(private val gameRepository: GameRepository) {
 
-    suspend operator fun invoke(): Status<List<Item>> {
+    suspend operator fun invoke(headingGameId: Int): Status<List<Item>> {
         return try {
             val items = mutableListOf<Item>()
-            val headerGameStatus = gameRepository.getGameById(GAME_ID)
+            val headerGameStatus = gameRepository.getGameById(headingGameId)
 
             items.add(headerGameStatus.getGameItemOrFail())
 
