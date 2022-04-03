@@ -6,12 +6,12 @@ import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-class GameDetailsRepositoryImplTest {
+class PublisherRepositoryImplTest {
     private val remoteDataSource = RemoteDataSourceImpl()
 
     @Test
-    fun `getGameDetailsById success status`() {
-        when (val list = runBlocking { remoteDataSource.getGameDetailsById(1) }) {
+    fun `getPublishers success status`() {
+        when (val list = runBlocking { remoteDataSource.getPublishers() }) {
             is Status.Success -> {
                 TestCase.assertNotNull(list.data)
                 println(list.data)
