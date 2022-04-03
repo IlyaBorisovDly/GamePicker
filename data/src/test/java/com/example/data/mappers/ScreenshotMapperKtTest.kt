@@ -9,8 +9,6 @@ class ScreenshotMapperKtTest {
 
     private lateinit var screenshotResponse: ScreenshotResponse
     private lateinit var screenshotsResponseList: List<ScreenshotResponse>
-
-    private lateinit var screenshot: Screenshot
     private lateinit var screenshotsList: List<Screenshot>
 
     @Before
