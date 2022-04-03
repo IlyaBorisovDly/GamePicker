@@ -11,6 +11,5 @@ class CreatorResponseTest {
     @Test
     fun `should be not null`() {
         TestCase.assertNotNull(creatorResponse)
-
     }
 }
