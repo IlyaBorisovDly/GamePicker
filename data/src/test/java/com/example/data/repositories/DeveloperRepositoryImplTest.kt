@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class DeveloperRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = DeveloperRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getDeveloper success status`() {

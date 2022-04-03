@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class ScreenshotRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = ScreenshotRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getScreenshotsByGameId success status`() {

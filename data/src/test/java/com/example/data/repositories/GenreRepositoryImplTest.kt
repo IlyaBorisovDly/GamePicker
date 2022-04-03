@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class GenreRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = GenreRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getGenres success status`() {

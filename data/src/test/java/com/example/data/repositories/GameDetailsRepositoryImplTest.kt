@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class GameDetailsRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = GameDetailsRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getGameDetailsById success status`() {

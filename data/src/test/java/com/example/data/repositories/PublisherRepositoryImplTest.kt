@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class PublisherRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = PublisherRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getPublishers success status`() {

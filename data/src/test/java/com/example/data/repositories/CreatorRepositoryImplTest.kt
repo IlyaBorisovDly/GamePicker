@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class CreatorRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = CreatorRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getCreators success status`() {

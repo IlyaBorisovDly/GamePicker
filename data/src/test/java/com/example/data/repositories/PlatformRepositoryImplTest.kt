@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class PlatformRepositoryImplTest {
-    private val remoteDataSource = RemoteDataSourceImpl()
+    private val remoteDataSource = PlatformRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
     fun `getPlatforms success status`() {
