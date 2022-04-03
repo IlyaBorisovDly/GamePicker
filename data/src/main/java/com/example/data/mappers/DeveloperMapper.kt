@@ -3,6 +3,7 @@ package com.example.data.mappers
 import com.example.data.entities.DeveloperResponse
 import com.example.domain.entities.Developer
 
+
 fun DeveloperResponse.toDomain(): Developer {
     return Developer(id = id, name = name, image = image_background)
 }
