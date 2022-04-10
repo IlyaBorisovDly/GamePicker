@@ -6,12 +6,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 private const val BASE_URL = "https://api.rawg.io/api/"
+private const val KEY = "152cd61095e34fd18852f0f33626b9c4"
 
 object RetrofitInstance {
 
     private val okHttpClient by lazy {
         OkHttpClient.Builder()
-            .addInterceptor(RawgInterceptor(BuildConfig.RAWG_API_KEY))
+            .addInterceptor(RawgInterceptor(KEY))
             .build()
     }
 
