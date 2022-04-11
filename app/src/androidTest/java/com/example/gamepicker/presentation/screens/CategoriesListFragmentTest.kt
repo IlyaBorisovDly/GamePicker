@@ -30,13 +30,17 @@ class CategoriesListFragmentTest {
 
     @Test
     fun categoriesViewShouldHaveProperStringReference() {
-        onView(
-            withId(R.id.textViewCategoriesHeader)
-        ).check(
-            matches(
-                withText(R.string.categories)
-            )
-        )
+        onView(withId(R.id.textViewCategoriesHeader))
+            .check(matches(withText(R.string.categories)))
+    }
+
+    @Test
+    fun categoriesMenuItemsShouldHaveCorrectValues() {
+        onView(withId(R.id.textViewCategoriesCreators)).check(matches(withText(R.string.categories_creators)))
+        onView(withId(R.id.textViewCategoriesPublishers)).check(matches(withText(R.string.categories_publishers)))
+        onView(withId(R.id.textViewCategoriesDevelopers)).check(matches(withText(R.string.categories_developers)))
+        onView(withId(R.id.textViewCategoriesGenres)).check(matches(withText(R.string.categories_genres)))
+        onView(withId(R.id.textViewCategoriesPlatforms)).check(matches(withText(R.string.categories_platforms)))
     }
 
     @After

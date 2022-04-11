@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".presentation.screens.parent.SearchFragment">
 
-    <TextView style="@style/Widget.GamePicker.UnderConstruction.TextView" />
+<!--    <TextView style="@style/Widget.GamePicker.UnderConstruction.TextView" />-->
+    <EditText
+        android:id="@+id/search_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the name of the game to search"
+        android:gravity="center"
+        />
 
 </FrameLayout>

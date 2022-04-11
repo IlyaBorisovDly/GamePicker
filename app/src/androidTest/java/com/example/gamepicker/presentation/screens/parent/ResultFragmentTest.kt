@@ -2,17 +2,15 @@ package com.example.gamepicker.presentation.screens.parent
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.example.gamepicker.R
+import com.example.gamepicker.presentation.screens.ResultFragment
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class SearchFragmentTest {
-    private lateinit var scenario: FragmentScenario<SearchFragment>
+class ResultFragmentTest {
+    private lateinit var scenario: FragmentScenario<ResultFragment>
 
     @Before
     fun initScenario() {
@@ -24,10 +22,6 @@ class SearchFragmentTest {
         scenario.onFragment { fragment ->
             Assert.assertNotNull(fragment.context)
         }
-    }
-
-    @Test
-    fun editTextShouldOpenKeyboard() {
     }
 
     @After
