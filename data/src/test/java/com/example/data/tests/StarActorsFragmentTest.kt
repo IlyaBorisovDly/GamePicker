@@ -1,16 +1,17 @@
-package com.example.data.repositories
+package com.example.data.tests
 
 import com.example.data.remote.sources.RemoteDataSourceImpl
+import com.example.data.repositories.GenreRepositoryImpl
 import com.example.domain.entities.states.Status
 import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-class GenreRepositoryImplTest {
+class StarActorsFragmentTest {
     private val remoteDataSource = GenreRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
-    fun `getGenres success status`() {
+    fun test_isDirectorsListVisible() {
         when (val list = runBlocking { remoteDataSource.getGenres() }) {
             is Status.Success -> {
                 TestCase.assertNotNull(list.data)

@@ -1,17 +1,18 @@
-package com.example.data.repositories
+package com.example.data.tests
 
 import com.example.data.remote.sources.RemoteDataSourceImpl
+import com.example.data.repositories.CreatorRepositoryImpl
 import com.example.domain.entities.states.Status
 import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-class GameDetailsRepositoryImplTest {
-    private val remoteDataSource = GameDetailsRepositoryImpl(RemoteDataSourceImpl())
+class DirectorsFragmentTest {
+    private val remoteDataSource = CreatorRepositoryImpl(RemoteDataSourceImpl())
 
     @Test
-    fun `getGameDetailsById success status`() {
-        when (val list = runBlocking { remoteDataSource.getGameDetailsById(1) }) {
+    fun test_isDirectorsListVisible() {
+        when (val list = runBlocking { remoteDataSource.getCreators() }) {
             is Status.Success -> {
                 TestCase.assertNotNull(list.data)
                 println(list.data)
