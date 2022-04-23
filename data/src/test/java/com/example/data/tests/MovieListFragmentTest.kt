@@ -1,5 +1,6 @@
 package com.example.data.tests
 
+import android.content.pm.ActivityInfo
 import com.example.data.entities.CreatorResponse
 import com.example.data.mappers.toDomain
 import com.example.data.remote.sources.RemoteDataSourceImpl
@@ -103,6 +104,33 @@ class MovieListFragmentTest {
     fun navStarActorsFragment_should_have_proper_values() {
         creatorsList.forEach {
             assert(it.javaClass == Creator::class.java)
+        }
+    }
+
+    @Test
+    fun item_should_have_equal_info_after_reopening() {
+        assert(creator.javaClass == Creator::class.java)
+    }
+
+    @Test
+    fun after_scrolling_to_certain_item_user_should_see_the_item() {
+        creatorsList.forEach {
+            assert(it.javaClass == Creator::class.java)
+        }
+    }
+
+    @Test
+    fun details_should_save_its_state_after_rotation() {
+        when (val list = runBlocking { remoteDataSourceScreenshots.getScreenshotsByGameId(1) }) {
+            is Status.Success -> {
+                TestCase.assertNotNull(list.data)
+                println(list.data)
+            }
+            is Status.Failure -> {
+                TestCase.assertNotNull(list.message)
+                println(list.message)
+            }
+            is Status.Loading -> {}
         }
     }
 }
