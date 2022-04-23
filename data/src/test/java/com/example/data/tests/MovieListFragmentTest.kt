@@ -11,14 +11,32 @@ import com.example.domain.entities.Creator
 import com.example.domain.entities.states.Status
 import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
+import org.junit.Before
 import org.junit.Test
 
-class GameDetailsRepositoryImplTest {
-    private val remoteDataSource = GameDetailsRepositoryImpl(RemoteDataSourceImpl())
+class MovieListFragmentTest {
+    private val remoteDataSourceGameDetails = GameDetailsRepositoryImpl(RemoteDataSourceImpl())
+    private val remoteDataSourcePlatforms = PlatformRepositoryImpl(RemoteDataSourceImpl())
+    private val remoteDataSourcePublishers = PublisherRepositoryImpl(RemoteDataSourceImpl())
+    private val remoteDataSourceScreenshots = ScreenshotRepositoryImpl(RemoteDataSourceImpl())
+
+    private lateinit var creatorResponse: CreatorResponse
+    private lateinit var creatorsResponseList: List<CreatorResponse>
+
+    private lateinit var creator: Creator
+    private lateinit var creatorsList: List<Creator>
+
+    @Before
+    fun initialize() {
+        creatorResponse = CreatorResponse(id = 0, name = "", slug = "", image = "")
+        creatorsResponseList = listOf(creatorResponse, creatorResponse, creatorResponse)
+        creator = creatorResponse.toDomain()
+        creatorsList = creatorsResponseList.toDomain()
+    }
 
     @Test
-    fun `getGameDetailsById success status`() {
-        when (val list = runBlocking { remoteDataSource.getGameDetailsById(1) }) {
+    fun in_initial_state_progress_bar_should_not_be_visible_when_recycler_is_displayed() {
+        when (val list = runBlocking { remoteDataSourceGameDetails.getGameDetailsById(1) }) {
             is Status.Success -> {
                 TestCase.assertNotNull(list.data)
                 println(list.data)
@@ -28,6 +46,63 @@ class GameDetailsRepositoryImplTest {
                 println(list.message)
             }
             is Status.Loading -> {}
+        }
+    }
+
+    @Test
+    fun clicked_item_in_the_list_should_have_proper_title() {
+        when (val list = runBlocking { remoteDataSourcePlatforms.getPlatforms() }) {
+            is Status.Success -> {
+                TestCase.assertNotNull(list.data)
+                println(list.data)
+            }
+            is Status.Failure -> {
+                TestCase.assertNotNull(list.message)
+                println(list.message)
+            }
+            is Status.Loading -> {}
+        }
+    }
+
+    @Test
+    fun onBackPressed_should_lead_to_home_fragment() {
+        when (val list = runBlocking { remoteDataSourcePublishers.getPublishers() }) {
+            is Status.Success -> {
+                TestCase.assertNotNull(list.data)
+                println(list.data)
+            }
+            is Status.Failure -> {
+                TestCase.assertNotNull(list.message)
+                println(list.message)
+            }
+            is Status.Loading -> {}
+        }
+    }
+
+    @Test
+    fun navDirectorsFragment_should_have_proper_title() {
+        when (val list = runBlocking { remoteDataSourceScreenshots.getScreenshotsByGameId(1) }) {
+            is Status.Success -> {
+                TestCase.assertNotNull(list.data)
+                println(list.data)
+            }
+            is Status.Failure -> {
+                TestCase.assertNotNull(list.message)
+                println(list.message)
+            }
+            is Status.Loading -> {}
+        }
+    }
+
+    @Test
+    fun navDirectorsFragment_should_have_proper_directors() {
+        assert(creator.javaClass == Creator::class.java)
+    }
+
+    @Test
+    fun navStarActorsFragment_should_have_proper_values() {
+        creatorsList.forEach {
+            assert(it.javaClass == Creator::class.java)
         }
     }
 }
